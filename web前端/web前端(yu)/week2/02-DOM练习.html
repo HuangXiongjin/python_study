@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table id="t1" border="" cellspacing="" cellpadding="">
+			<tr id="tr1">
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+			</tr>
+			<tr id="tr2">
+				<td>21</td>
+				<td>22</td>
+				<td>23</td>
+			</tr>
+			<tr id="tr3">
+				<td>31</td>
+				<td>32</td>
+				<td>33</td>
+			</tr>
+			
+		</table>
+		
+		<!--要求:
+			1)用js将table的背景颜色设置为随机颜色
+			2)将第一列的文字颜色全部变成红色
+			3)在最后插入一行表格，内容分别是 41，42，43
+		-->
+		<script type="text/javascript">
+			/*
+			//产生1-10的随机整数
+			randomNum = parseInt(Math.random()*9+1)
+			console.log(randomNum)
+			
+			//产生0-255的随机整数
+			randomNum = parseInt(Math.random()*255)
+			console.log(randomNum)
+			*/
+			//1)用js将table的背景颜色设置为随机颜色
+			//获取table节点
+			tableNode = document.getElementById('t1')
+			//产生随机颜色值
+			red = parseInt(Math.random()*255)
+			green = parseInt(Math.random()*255)
+			blue = parseInt(Math.random()*255)
+			//设置背景颜色属性
+			tableNode.style.backgroundColor = 'rgba('+red+','+green+','+blue+','+'0.6)'
+			
+			//2)将第一列的文字颜色全部变成红色
+			//拿所有的tr
+			trNodes = document.getElementsByTagName('tr')
+			console.log(trNodes)
+			for(x in trNodes){
+				console.log(x)
+				if(x == 'length'){
+					break
+				}
+				//获取每个tr
+				trNode = trNodes[x]
+				//获取每一行的第一个td
+				tdNode = trNode.firstElementChild
+				//修改文字颜色
+				//tdNode.style.color = 'red'
+				tdNode.style = 'color:red; font-size:25px'
+			}
+			
+			//3)在最后插入一行表格，内容分别是 41，42，43
+			trNode = document.createElement('tr')
+//			tdNode = document.createElement('td')
+//			tdNode.innerText = '41'
+//			trNode.appendChild(tdNode)
+//			
+//			tdNode = tdNode.cloneNode()
+//			tdNode.innerText = '42'
+//			trNode.appendChild(tdNode)
+//			
+//			tdNode = tdNode.cloneNode()
+//			tdNode.innerText = '43'
+//			trNode.appendChild(tdNode)
+			for(x=1;x<=3;x++){
+				tdNode = document.createElement('td')
+				tdNode.innerText = '4'+x
+				trNode.appendChild(tdNode)
+			}
+			
+			tableNode.appendChild(trNode)
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>标签</title>
+	</head>
+	<body>
+		<!--表格
+			标签
+			1.table标签 - 代表表格整体
+			cellspacing属性：设置表格中单元格和单元格以及单元格和表格表框的间距
+			bgcolor属性：设置整个表格背景颜色(包含单元格的部分)
+			cellpadding属性：设置单元格中的内容到单元格(上下左右)边框之间的距离
+			width属性：设置整个表格的宽度
+			height属性：设置整个表格的高度
+			align属性：center(居中),left(左对齐),right(右对齐); 让整个表格在它的父标签里面居中、居左或者居右
+			
+			border属性：设置单元格边框的宽度
+			bordercolor属性：单元格边框的颜色
+			
+			2.tr  - 代表表格中的一行
+			bgcolor属性：设置一行中所有单元格的背景颜色
+			height属性：设置一行的高度
+			align属性：让一行中所有单元格的内容在单元格中居中、居左或者居右
+			
+			3.td  - 代表表格中的一个单元格
+			bgcolor属性：设置指定单元格的背景颜色
+			width属性：设置td所在的列的宽度
+			align属性：让当前单元格中的内容在单元格中居中、居左或者居右
+			
+		
+			
+			补充：细线表格
+			1）设置整个的table的背景颜色是边框线的颜色
+			2）设置每个单元格的颜色和边框线的颜色不一样
+			3）设置单元格和单元格的间距(cellspacing)为1
+		-->
+		<table cellspacing="1" bgcolor="red" cellpadding="20" width="1000" height="500">
+			<!--第一行-->
+			<tr bgcolor="white">
+				<td>第1行第1列</td>
+				<td bgcolor="purple">第1行第2列</td>
+				<td>第1行第3列</td>
+			</tr>
+			<!--第二行-->
+			<tr bgcolor="greenyellow">
+				<td>第2行第1列</td>
+				<td>第2行第2列</td>
+				<td>第2行第3列</td>
+			</tr>
+			<!--第三行-->
+			<tr bgcolor="pink">
+				<td>第3行第1列</td>
+				<td>第3行第2列</td>
+				<td>第3行第3列</td>
+			</tr>
+			<!--第四行-->
+			<tr bgcolor="orange">
+				<td>第4行第1列</td>
+				<td>第4行第2列</td>
+				<td>第4行第3列</td>
+			</tr>
+		</table>
+		
+		<br />
+		<table border="2" bordercolor="red" cellspacing="0" align="center">
+			<!--第一行-->
+			<tr bgcolor="white" height="40" align="center">
+				<td width="120">第1行第1列</td>
+				<td width="150" bgcolor="purple">第1行第2列</td>
+				<td width="200">第1行第3列</td>
+			</tr>
+			<!--第二行-->
+			<tr bgcolor="greenyellow" height="80">
+				<td>第2行第1列</td>
+				<td align="right">第2行第2列</td>
+				<td>第2行第3列</td>
+			</tr>
+			<!--第三行-->
+			<tr bgcolor="pink" height="80">
+				<td>第3行第1列</td>
+				<td>第3行第2列</td>
+				<td>第3行第3列</td>
+			</tr>
+			<!--第四行-->
+			<tr bgcolor="orange" height="80">
+				<td>第4行第1列</td>
+				<td>第4行第2列</td>
+				<td>第4行第3列</td>
+			</tr>
+		</table>
+		
+		
+		
+	</body>
+</html>

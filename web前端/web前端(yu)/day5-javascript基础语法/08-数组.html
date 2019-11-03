@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+<script type="text/javascript">
+	//js中的数组相当于python中的列表
+	//1.查
+	arr1 = [10, 2, 30, 4, 5]
+	//1）获取单个元素: 数组[下标]
+	console.log(arr1[3])   //4
+	console.log(arr1[10])  //undefined
+	
+	//2)遍历
+	for(index in arr1){
+		console.log('index:'+index, arr1[index])
+	}
+	
+	//2.增
+	console.log('=============增加==================')
+	//1)数组.push(元素) - 在数组的最后添加元素
+	arr1.push(100)
+	console.log(arr1)
+	
+	//2)数组.splice(下标,0,元素)  - 在指定的下标前插入指定的元素
+	//数组.splice(下标,0,元素1,元素2,...)  - 在指定的下标前插入多个元素
+	arr1 = [1, 2, 3, 6, 7,8]
+	arr1.splice(3,0,4,5)
+	console.log(arr1)
+	
+	//3.删
+	console.log('=============删除==================')
+	//1)数组.pop()  - 取出数组中的最后一个元素
+	re = arr1.pop()
+	console.log(arr1, re)
+	
+	//2)数组.shift() - 取出数组中第一个元素
+	re = arr1.shift()
+	console.log(arr1, re)
+	
+	//3)数组.splice(开始删除的下标,删除的个数)
+	arr1 = [10, 30, 20, 40]
+	arr1.splice(1,2)
+	console.log(arr1)
+	
+	//4.改
+	//数组[下标] = 值
+	arr1[0] = 200
+	console.log(arr1)
+	
+	//5.排序
+	//sort(函数对象) 
+	//函数对象 - 函数，有两个参数(代表数组中的两个元素), 返回值代表排序方法
+	console.log('=================排序==============')
+	nums = [90 ,23, 56, 7, 89, 70]
+	//数组元素从大到小排序
+	nums.sort(function(a,b){return b-a})
+	console.log(nums)
+	
+	//数组元素从小到大排序
+	nums.sort(function(a,b){return a-b})
+	console.log(nums)
+	
+	students = [
+		{name:'小明', age:18, score:90},
+		{name:'小花', age:20, score:70},
+		{name:'小红', age:15, score:78},
+		{name:'小李', age:30, score:60}
+	]
+	
+	//将数组元素按照元素的age属性从下到大排序
+//	students.sort(function(a,b){return a.age - b.age})
+//	console.log(students)
+	
+	//将数组元素按照元素的score属性从大到小排序
+	students.sort(function(a,b){return b.score - a.score})
+	console.log(students)
+	
+	
+	
+	
+</script>

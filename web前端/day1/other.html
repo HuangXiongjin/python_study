@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>另一个页面</title>
+    </head>
+    <body>
+        <div>
+            hello
+        </div>
+        <span>你好</span>
+        <!--internal fram 内部窗口-->
+        <iframe  frameborder="0"  src="http://www.baidu.com" width="500" height="300"></iframe>
+            <video controls width="600">
+                    <source src="./gnzw.mp4">
+            </video><br>
+        <h2>我是另一个页面</h2>
+       
+        <!--post端口类型 multipart/form-data提交文件必须加这个参数-->
+        <hr>
+        <fieldset>
+            <legend>注册信息</legend>
+        <form action="" method="post" enctype="multipart/form-data">
+        <p>
+                用户名：<input type="text" placeholder="请输入用户名">
+
+        </p>       
+        <p>
+                密码：<input type="password" placeholder="请输入密码">
+        </p>
+    </fieldset>
+    <fieldset>
+            <legend>基本信息</legend>    
+    <p>
+            <!--radio单选按钮 name必须一样-->
+            性别：
+            <input type="radio" name="sex" checked>男
+            <input type="radio" name="sex" >女
+        </p>
+        <p>
+            爱好：
+            <input type="checkbox" name="fav">篮球
+            <input type="checkbox" name="fav">读书
+            <input type="checkbox" name="fav" >打游戏
+            <input type="checkbox" name="fav" checked>看电影
+        </p>
+        <p>
+            出生日期：
+            <input type="date">
+        </p>
+            省：
+            <select>
+                <option value="">北京</option>
+                <option value="">上海</option>
+                <option value="">广州</option>
+                <option value="" selected>深圳</option>
+                
+            </select><br>
+            手机号:
+            <input type="tel"><br>
+            邮箱：
+            <input type="email"><br>
+            <input type="number"><br>
+            头像：
+            <input type="file"><br>
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+        </fieldset>
+    </form>
+        <hr>
+        <a href="./index.html">返回首页</a>
+        <table border="1"> <!--border表格粗细-->
+            <tr align="center">
+                <caption>学生信息表</caption>
+                <td width="100" align="center">学号</td>
+                <td align="center">姓名</td>
+                <th>性别</th><!--th默认居中加粗-->
+                <td>生日</td>
+                <td>籍贯</td>
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+                
+            </tr>
+            <tr>
+                    <td>001</td>
+                    <td>黄雄进</td>
+                    <td>男</td>
+                    <td rowspan="2">1996-10-28</td>
+                    <td>云南曲靖</td>
+                    <td colspan="3">100</td>
+                    
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>小明</td>
+            <td>男</td>
+            
+            <td>四川成都</td>
+            </tr>
+            
+            <!--快捷方式table>tr*3>ta*5-->
+        </table>
+    </body>
+</html>

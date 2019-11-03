@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app-1">
+			<h1>{{name}}</h1>
+			<p v-for="data in datalist" v-if="datalist">{{data.title}}</p>
+			
+		</div>
+		
+		
+		<!--1.将请求到的数据通过Vue加载到网页中
+			1)
+		-->
+		<script type="text/javascript">
+			//0)创建Vue对象
+			var app1 = new Vue({
+				el:'#app-1',
+				data: {
+					datalist: [],
+					name: 'abc'
+				}
+			})
+			
+			
+			//1)通过接口请求
+			$.ajax({
+				type:"get",
+				url:"http://rap2api.taobao.org/app/mock/177073/houseList",
+				async:true,
+				success:function(result){
+					//2）数据请求成功将请求到的数据关联到Vue对象
+					console.log(result)
+					app1.datalist = result.datalist
+				
+				}
+			});
+		</script>
+		
+	</body>
+</html>

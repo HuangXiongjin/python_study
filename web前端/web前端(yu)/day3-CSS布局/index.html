@@ -1,0 +1,60 @@
+<!--
+	1.表现标准，负责网页中内容的布局和样式
+	2.语法
+	选择器{属性名1:属性值1;属性名2:属性值2;....}
+	3.写在哪儿
+	内联:
+	内部:
+	外部:
+	4.选择器
+	元素选择器\id选择器\class选择器\*\
+	群组\后代
+	
+	伪类选择器 - 普通选择器:状态
+	link
+	visited
+	hover
+	active
+	遵守‘爱恨原则 - LoVeHAte’
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!--1.form标签-->
+		<form action="" method="post">
+			<!--2.input标签-->
+			<input class="c1 c2" type="text" name="" id="" value="默认值" placeholder="请输入账号" maxlength="10"/>
+			<input type="password" name="" id="" value="" />
+			
+			<input type="radio" name="sex" id="sex1" value="男" checked="checked"/><label for="sex1">男</label>
+			<input type="radio" name="sex" id="sex2" value="女" /><label for="sex2">女</label>
+			
+			<input type="checkbox" name="" id="" value="" />
+			
+			<input type="reset" name="" id="" value="" />
+			<input type="submit" value=""/>
+			
+			<!--3.select-->
+			<select name="">
+				<optgroup label="分组名"></optgroup>
+				<option value=""></option>
+				<option value=""></option>
+				<option value=""></option>
+			</select>
+			
+			<!--4.-->
+			<textarea name="" rows="" cols="" placeholder="建议" maxlength="200">我的建议...</textarea>
+		</form>
+	</body>
+</html>

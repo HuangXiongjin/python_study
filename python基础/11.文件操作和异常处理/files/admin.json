@@ -1,0 +1,6 @@
+[{"users":[{"user": "hxj2", "password": "1234562"},
+  {"user": "hxj1", "password": "1234561"},
+  {"user": "hxj3", "password": "1234563"}],
+  "students": [{"name": "\u5c0f\u660e1", "sno": "001", "sex": "\u5973", "age": 12, "tel": "110"},
+    {"name": "\u5c0f\u660e2", "sno": "002", "sex": "\u7537", "age": 13, "tel": "7685433"},
+    {"name": "\u5c0f\u660e3", "sno": "003", "sex": "\u5973", "age": 14, "tel": "15784"}]}]

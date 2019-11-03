@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+<script type="text/javascript">
+	//js支持数学运算符、比较运算符、逻辑运算符、赋值运算符、(位运算)
+	//1.数学运算符：+, -, *, /, %, ++,--
+	//+, -, *, /, %和python一样
+	console.log(10+20, 10-20, 10*20, 10/20, 10%20)
+	//1)自加1运算: 变量++, ++变量
+	num = 10
+	num++       //num += 1
+	console.log(num)    // 11
+	++num
+	console.log(num)    // 12
+	
+	//2)自减1运算: 变量--, --变量
+	num = 10
+	num--
+	console.log(num)
+	--num
+	console.log(num)
+	
+	//3)自加自减的坑
+	num = 10
+	num2 = num++       // num2 = num; num+=1
+	console.log(num2)
+	
+	num = 10
+	num2 = ++num      // num+=1; num2=num
+	console.log(num2)
+	
+	//2.比较运算符: >,<,==,!=,>=,<=, ===, !==
+	// 比较大小和python一样
+	
+	// == : 判断值是否相等(不管类型)
+	// === : 同时判断值和类型是否相等(python中的==)
+	console.log(5 == '5')   // true
+	console.log(5 === '5')  // false
+	
+	console.log(5 != '5')  //false
+	console.log(5 !== '5')  // true
+	
+	// 支持表示范围的连续写法
+	num = 10
+	reslut = 0 < num <100
+	console.log(reslut)
+	
+	//3.逻辑运算：&&(逻辑与运算)、||(逻辑或运算)、!(逻辑非运算)
+	//和python中的and,or,not功能一样
+	console.log(true && true, true && false)
+	console.log(true || true, true || false)
+	console.log(!true)
+	
+	//4.赋值运算符: =, +=, -=, *=, /=, %=
+	//和python一样
+	
+	//5.复合运算和python一样
+	
+	//6.三目运算符 -    表达式?值1:值2
+	//判断表达式的值是否为true,如果为true整个运算的结果是值1，否则是值2
+	age = 16
+	reslut = age>18?'成年':'未成年'
+	console.log(reslut)
+	
+	
+</script>

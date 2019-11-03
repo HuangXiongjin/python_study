@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		
+		<form action="" method="get">
+			<!--1.下拉菜单
+				select标签 - 整个下拉列表
+				option标签 - 列表中的选项
+				optgroup标签 - 一个列表选项分组，通过label属性值来设置分组名
+				               (只是在显示上对选项进行分区，不影响提交结果)
+			-->
+			<select name="province">
+				<option value="四川">四川省</option>
+				<option value="湖南">湖南省</option>
+				<option value="湖北">湖北省</option>
+				<option value="福建">福建省</option>
+			</select>
+			<select name="city">
+				<option value="成都">成都</option>
+				<option value="南充">南充</option>
+				<option value="绵阳">绵阳</option>
+				<option value="宜宾">宜宾</option>
+			</select>
+			<br />
+			<br />
+			
+			<select name="city2">
+				<optgroup label="四川省"></optgroup>
+				<option value="成都">成都</option>
+				<option value="南充">南充</option>
+				<option value="绵阳">绵阳</option>
+				<option value="宜宾">宜宾</option>
+				
+				<optgroup label="广东省"></optgroup>
+				<option value="广州">广州</option>
+				<option value="中山">中山</option>
+				<option value="珠海">珠海</option>
+				<option value="佛山">佛山</option>
+				<option value="惠州">惠州</option>
+			</select>
+			
+			<!--2.多行文本域 - textarea
+				提供一个可以换行输入的输入框
+				
+				rows属性 - 行数，影响输入框的默认高度
+				cols属性 - 列数, 影响输入框的宽度
+				maxlength属性 - 输入的内容的最大长度
+				autofocus属性 - 值设置为autofocus,页面刷新和加载的时候自动成为焦点
+			-->
+			<textarea autofocus="autofocus" name="comment" rows="10" cols="200" maxlength="200" placeholder="输入你的意见"></textarea>
+			
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

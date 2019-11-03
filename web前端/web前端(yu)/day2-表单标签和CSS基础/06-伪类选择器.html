@@ -1,0 +1,88 @@
+<!--
+	1.伪类选择器
+	普通选择器选中的是html中不同的标签；伪类选择器选中的是标签的不同状态
+	
+	2.语法
+	普通选择器:状态{属性1:属性值1;属性2:属性值2;...}
+	
+	1)link - 初始状态,对于a标签来说，link对应的状态是a标签中的连接从来没有成功访问过;(一般只在a标签进行设置)
+	2)visited - 超链接成功访问过的状态
+	3)hover - 鼠标悬停在标签上对应的状态（不只针对超链接，其他标签也常用）
+	4)active - 鼠标按住标签不放对应的状态(主要作用在超链接和按钮)
+	
+	3.选择器的权重值
+	权重越大优先级越高, 但是内联样式表的优先级永远最高
+	元素选择器的权重: 0001 == 1
+	class选择器的权重: 0010 == 2
+	id选择器的权重: 0100 == 4
+	伪类选择器的权重: 0001 == 1
+	群组选择器的权重: 看单独每个选择器的权重
+	后代选择器的权重: 所有选择器的权重之和
+	
+	
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			/*1)link*/
+			a:link{
+				color: rgb(150,150,150);
+			}
+			/*#a1:link{}*/
+			a:visited{
+				color: green;
+			}
+			
+			a:hover{
+				color: red;
+				font-size: 30px;
+			}
+			p:hover{
+				background-color: lightgoldenrodyellow;
+				
+			}
+			a:active{
+				color: blueviolet;
+			}
+			button:active{
+				background-color: lightseagreen;
+			}
+			
+			.h1{
+				color: blue;
+			}	
+			h1{
+				color: red;
+			}
+			
+			#h1{
+				color: green;
+			}
+			div #h1{
+				color: yellow;
+			}
+			
+			#div2 #div1 #h1{
+				background-color: hotpink;
+			}
+				
+		</style>
+		
+	</head>
+	<body>
+		<div id="div2">
+			<div id="div1">
+				<h1 style="background-color: yellowgreen;" id="h1" class="h1">我是标题</h1>
+			</div>
+		</div>
+		
+		<a id="a1" href="https://www.baidu.com">百度一下</a>
+		<p>段落</p>
+		<button>按钮</button>
+		<a href="04-CSS基础.html">打开选择器</a>
+	</body>
+</html>

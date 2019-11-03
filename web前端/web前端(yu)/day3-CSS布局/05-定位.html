@@ -1,0 +1,79 @@
+<!--定位
+	1.position属性  - 选中定位的标签的参考对象
+	initial/static  - 不定位，默认值；但是body的不是它们
+	absolute  - 绝对定位, 相对第一个position属性不是initial/static的父标签进行定位
+	relative - 相对定位,相对标准流定位(相对于原标签在标准流中的位置进行定位)
+	fixed - 相对浏览器定位
+	sticky - 定位保持网页中最后一个块在最后面（网页滚动的时候在浏览的最下面，网页不超过一屏在内容的最下面）
+	
+	2.left\right\top\bottom
+	设置当前标签的左、右、上、下到参考对象的左、右、上、下的距离
+	注意: 在不给position属性的时候直接设置left\right\top\bottom属性无效
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*===========绝对定位========*/
+			#div1{
+				position: relative;
+			}
+			
+			#div2{
+				/*设置参考对象*/
+				position: absolute;
+				
+				/*设置间距*/
+				right: 100px;
+				
+			}
+			
+			/*===========相对定位===============*/
+			#div22{
+				position: relative;
+				right: -100px;
+			}
+			
+			/*============相对浏览器定位==========*/
+			#div111{
+				position: fixed;
+				right: 20px;
+				bottom: 100px;
+			}
+			
+			#div222{
+				position: sticky;
+				bottom: 20px;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="" style="background-color: yellow; height: 400px;">
+			
+		</div>
+		<!--===========绝对定位========-->
+		<!--<div id="div1" style="background-color: yellow; width: 400px; height: 400px;">
+			<div id="div2" style="background-color: red; width: 100px; height: 100px;"></div>
+		</div>-->
+		
+		<!--===========相对定位========-->
+		<!--<div id="div11" style="background-color: red; width: 100px; height: 100px;"></div>-->
+		<!--<div id="div22" style="background-color: yellow; width: 100px; height: 100px;"></div>-->
+	
+		<!--===========相对浏览器定位============-->
+		<!--<div id="div111" style="background-color: yellowgreen; width: 100px; height: 100px;"></div>-->
+		
+		<div id="div222" style="background-color: yellowgreen;height: 100px;"></div>
+		
+		<div id="div3" style="position: absolute; left: 100px; right: 100px; background-color: chartreuse; height: 100px;">
+			
+		</div>
+	
+	</body>
+</html>

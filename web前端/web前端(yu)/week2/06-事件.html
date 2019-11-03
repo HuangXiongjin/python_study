@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--事件绑定方式1（不推荐使用）-->
+		<button onclick="alert('你好！')">按钮1</button>
+		<button id="btn1" onclick="btnClick()">删除1</button>
+		<button id="btn2" onclick="btnClick()">删除2</button>
+		<br /><br />
+		
+		<!--事件绑定方式2（推荐使用）-->
+		<button id="btn3">删除</button>
+		<button class="btn1">删除3</button>
+		<button class="btn1">删除4</button>
+		<button class="btn1">删除5</button>
+		<br /><br />
+		
+		<!--事件绑定方式3（推荐使用）-->
+		<button id="btn4">按钮</button>
+		
+	</body>
+</html>
+
+<script type="text/javascript">
+	// js是事件驱动语言
+	// 1.事件三要素: 事件源、事件、事件驱动程序
+	// 事件源发送某个事件就做什么事情(事件驱动程序)
+	// 2.事件的绑定
+	// 1) 在标签内部给标签的事件属性赋值
+	// 注意: 这种方式绑定的时候，this指向的是window
+	function btnClick(){
+		console.log(this)
+		result = confirm('是否删除?')
+		if(result){
+			document.getElementById('btn1').remove()
+		}
+	}
+	
+	// 2) 通过给节点对象的事件属性赋值来绑定
+	// 注意: 这种方式绑定的时候，this指向的是事件源
+	btnNode = document.getElementById('btn3')
+	// 给事件属性赋函数名
+	btnNode.onclick = btnClick     
+	
+	//获取所有class值是btn1的标签对应的节点
+	btn1Nodes = document.getElementsByClassName('btn1')
+	for(x=0;x<btn1Nodes.length;x++){
+		btn1Node = btn1Nodes[x]
+		// 给事件属性赋匿名函数
+		btn1Node.onclick = function(){
+			console.log(this)
+			result = confirm('是否删除?')
+			if(result){
+				this.remove()
+			}
+		}
+	}
+	
+	// 3)通过addEventListener方法进行绑定
+	/*
+	 a.语法
+	 事件源节点.addEventListener(事件名称,事件驱动程序)
+	 b.说明
+	 事件名称 - 事件属性名去掉on
+	 事件驱动程序 - 事件发生后需要调用的函数
+	 c.注意
+	 this是事件源
+	 可以给同一个节点的同一个事件绑定不同的事件驱动程序
+	*/
+	btnNode4 = document.getElementById('btn4')
+	btnNode4.addEventListener('click', function(){
+		console.log(this)
+		alert('你好！')
+	})
+	btnNode4.addEventListener('click', function(){
+		this.style.color = 'red'
+	})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>

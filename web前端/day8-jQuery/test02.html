@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#container{
+				margin: 50px 100px;
+			}
+			#fruits>li{
+				background-color: #5F9EA0;
+				width: 150px;
+				height: 50px;
+				color: white;
+				text-align: center;
+				margin: 2px 0;
+				font: 20px/50px "courier new";
+			}
+			#fruits>li>a{
+				float: right;
+				text-decoration: none;
+				color: white;
+				position: relative;
+				right: 5px;
+			}
+			#fruits~input{
+				border: none;
+				outline: none;
+				margin:50px 0 100px 0;
+				font-size: 20px/30px "courier new";
+				
+			}
+			#fruits~input[type=text]{
+				width: 150px;
+				height: 30px;
+				border-bottom: 1px solid black;
+				text-align: center;
+			}
+			#fruits~input[type=button]{
+				background-color: red;
+				width: 50px;
+				height: 30px;
+				font: 15px/30px "courier new";
+				color: white;
+				vertical-align: bottom;
+				cursor: pointer;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="fruits">
+				<li>西瓜<a href="">x</a></li>
+				<li>苹果<a href="">x</a></li>
+				<li>香蕉<a href="">x</a></li>
+				<li>草莓<a href="">x</a></li>
+			</ul>
+			<input type="text" name="fruit">
+			<input id="ok" type="button" value="确定">
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script>
+		function removeItem(evt) {
+			//阻止事件的默认行为
+			evt.preventDefault()
+			//$函数的参数是原生JavaScript对象 --> 原生JavaScript对象变成jQuery对象
+			$(evt.target).parent().remove()
+		}	
+		
+		//$函数的参数是样式表选择器,获得元素对应的jQuery对象,
+		//所有和样式表匹配的元素会被装在一个数组中,
+		//通过jQuery对象我们可以调用更多简单的方法来对元素进行操作,
+		//而且这些方法没有浏览器兼容的问题
+		$('#fruits>li>a').on('click', removeItem)
+		
+		// const input = $('#ok').prev()
+		 const input = $('input[name=fruit]')
+		$('#ok').on('click', (evt) => {
+			let fruitName =  input.val().trim()
+			if (fruitName.length > 0){
+				
+			$('#fruits').append(
+				//$函数的参数是标签字符串 --> 创建元素并获得对应的jQuery对象
+				$('<li>').text(fruitName).append
+					($('<a>').html('x').attr('href', '')
+						.on('click', removeItem)
+				)
+			)
+			}
+			//添加完成以后清空
+			input.val('')
+			//获取鼠标焦点
+			input.get(0).focus()
+			
+		})
+	</script>
+</html>

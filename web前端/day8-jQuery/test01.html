@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>操作表格</title>
+		<style>
+			.data {
+				border-collapse: collapse;
+				margin: 0 auto;
+			}
+			.data td, .data th {
+				border: 1px solid black;
+				text-align: center;
+				height: 50px;
+				width: 100px;
+			}
+			.buttons {
+				margin-top: 15px;
+				text-align: center;
+			}
+			.buttons>button {
+				outline: none;
+				border: none;
+				background-color: darkcyan;
+				color: white;
+				width: 75px;
+				height: 25px;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="data">
+		    <caption>学生信息表</caption>
+		    <thead>
+		        <tr>
+		            <th width="80">学号</th>
+		            <th width="100">姓名</th>
+		            <th width="80">性别</th>
+		            <th width="120">生日</th>
+		            <th width="120">籍贯</th>
+		            <th width="80">语文</th>
+		            <th width="80">数学</th>
+		            <th width="80">英语</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr>
+		            <td>1001</td>
+		            <td>骆昊</td>
+		            <td>男</td>
+		            <td align="center" rowspan="3">1992-5</td>
+		            <td>四川成都</td>
+		            <td align="center" colspan="3">40</td>
+		        </tr>
+		        <tr>
+		            <td>1002</td>
+		            <td>王大锤</td>
+		            <td>男</td>
+		            <td>四川绵阳</td>
+		            <td>100</td>
+		            <td>90</td>
+		            <td>80</td>
+		        </tr>
+				<tr>
+				    <td>1003</td>
+				    <td>白元芳</td>
+				    <td>男</td>
+				    <td>四川绵阳</td>
+				    <td>75</td>
+				    <td>92</td>
+				    <td>93</td>
+				</tr>
+		    </tbody>
+		</table>
+		<div class="buttons">
+			<button id="addRow">添加行</button>
+			<button id="delRow">删除行</button>
+			<button id="clear">清空数据</button>
+		</div>
+		
+		<script>
+			let table = document.querySelector('.data')
+			let addRowBtn = document.querySelector('#addRow')
+			
+			addRowBtn.addEventListener('click', (evt) => {
+				let row = table.insertRow(table.rows.length)   
+				row.insertCell(0).textContent = '1005'
+				row.insertCell(1).textContent = '武则天'
+				row.insertCell(2).textContent = '女'
+				
+			})
+			let delRowBtn = document.querySelector('#delRow')
+			delRowBtn.addEventListener('click', (evt) => {
+				if (table.rows.length > 1) {
+					table.deleteRow(table.rows.length - 1)
+				}
+			})
+			let clearBtn = document.querySelector('#clear')
+			clearBtn.addEventListener('click', (evt) => {
+				let cells = document.querySelectorAll('.data td')
+				for (cell of cells) {
+					cell.innerHTML = ''
+					cell.textContent = ''
+				}
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				border:1px solid #000000;
+				width: 300px;
+				height: 30px;
+				font: 20px/30px "courier new";
+			}
+		</style>
+	</head>
+	<body>
+		<div>Hello.world!</div>
+		<div>Good bye!</div>
+		<div>See you tomorrow!</div>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			// $(document).ready(() => {})
+			$(() => {
+				// $('div').text('hello,world').css('background-color', 'lightcyan').css('text-align', 'center')
+				//jQuery将原生对象<div>转换成jQuery对象
+				$('div').css({
+					'background-color': 'lightcyan',
+					'text-align': 'center',
+				}).on('click', (evt) => {
+					// alert($(evt.target).text())
+					$(document.body).prepend(
+					$('<div>').text($(evt.target).text())
+					)
+				})
+			})
+		</script>
+	</body>
+</html>

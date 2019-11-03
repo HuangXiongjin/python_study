@@ -1,0 +1,64 @@
+<!--
+	1.什么是js
+	js是JavaScript的缩写，是一门唯一的用来控制网页内容的脚本语言；
+	是web标准中的行为标准-用来控制网页内容的变化
+	
+	2.js写在什么位置
+	内联 - 将js代码写在标签的事件相关属性中,例如：onclick属性
+	内部 - 将js代码写在script标签中(既可以放在head标签中也可以放在body标签)
+	外部 - 将js代码写在js文件中, 然后通过script标签导入
+	
+	3.js能做什么事情
+	1)修改标签内容
+	2)修改标签属性
+	3)修改标签样式
+	4)添加内容
+	
+	4.怎么写js代码？
+	js语法
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+		<!--1.内联js-->
+		<button onclick="alert('内联js')">点我啊</button>
+		
+		<!--2.内部js-->
+		<!--<script type="text/javascript">	
+			//弹出警告框
+			alert('内部js')
+		</script>-->
+		<!--3.外部js-->
+		<!--<script type="text/javascript" src="js/index.js"></script>-->
+		
+		<!--修改标签内容-->
+		<p id="p1">我是段落</p>
+		<button onclick="document.getElementById('p1').innerText = 'hello js'">修改内容</button>
+		<br /><br />
+		
+		<!--修改标签属性-->
+		<img src="img/luffy.jpg" id="img1"/>
+		<button onclick="document.getElementById('img1').src = 'img/luffy1.png'">修改图片</button>
+		<br /><br />
+		
+		<!--修改标签样式-->
+		<p id="p2">我是一段文字</p>
+		<button onclick="document.getElementById('p2').style='color:red;font-size:25px;'">修改样式</button>
+		
+		<!--网页中添加内容-->
+		<script type="text/javascript">
+			for(x=1;x<=10;x++){
+				document.write('<h1>我是标题'+x+'</h1>')
+			}
+		</script>
+		
+	</body>
+	
+	
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>homework2</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font-weight: normal;
+				/*默认值，定义标准的字符*/
+			}
+
+			body {
+				color: #666;
+				background: url(img/dark-wood.jpg) center;
+				font-family: Georgia, Times, serif;
+				line-height: 1.4em;
+			}
+
+			.wrapper {
+				width: 940px;
+				margin: 20px auto 20px auto;
+				border: 2px solid #000;
+				background-color: #fff;
+			}
+
+			header {
+				height: 160px;
+				background-image: url(img/header.jpg);
+			}
+
+			h1 {
+				visibility: hidden;
+				width: 940px;
+				height: 130px;
+			}
+
+			nav,
+			footer {
+				clear: both;
+				color: #fff;
+				background-color: #ccc;
+				height: 30px;
+				text-transform: capitalize;
+			}
+
+			nav>ul {
+				padding: 5px 0px 5px 30px;
+			}
+
+			nav>ul>li {
+				display: inline-block;
+				margin-right: 40px;
+			}
+
+			nav>ul>li>a:hover,
+			nav>ul>li>a.current {
+				color: #000;
+
+			}
+
+			section.courses {
+				float: left;
+				width: 659;
+				border-right: 1px solid #eeeee;
+			}
+
+			article {
+				clear: both;
+				overflow: auto;
+				width: 100%;
+			}
+
+			hgroup {
+				margin-top: 40px;
+			}
+
+			figure {
+				float: left;
+				width: 290px;
+				height: 220px;
+				padding: 5px;
+				margin: 20px;
+				border: 1px solid #eee;
+			}
+
+			aside {
+				width: 230px;
+				float: left;
+				padding-left: 20px;
+			}
+
+			aside>section>a {
+				display: block;
+				padding: 10px;
+				border-bottom: 1px solid #eee;
+			}
+
+			aside>section>a:hover {
+				color: #985d6a;
+				background-color: #efefef;
+			}
+
+			a {
+				color: #de6581;
+				text-decoration: none;
+			}
+
+			h2 {
+				margin: 10px 0 5px;
+			}
+
+			h3 {
+				margin-bottom: 10px;
+				color: #de6581;
+			}
+
+			aside>section>h2 {
+				padding: 30px 0 10px;
+				color: #de6581;
+			}
+
+			footer {
+				padding: 10px 0 0 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>Yoko's Kitchen</h1>
+				<nav>
+					<ul>
+						<li><a href="" class="current">home</a></li>
+						<li><a href="">classes</a></li>
+						<li><a href="">catering</a></li>
+						<li><a href="">about</a></li>
+						<li><a href="">contact</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section class="courses">
+				<article>
+					<figure>
+						<img src="images/bok-choi.jpg" alt="Bok Choi" />
+						<figcaption>Bok Choi</figcaption>
+					</figure>
+					<hgroup>
+						<h2>Japanese Vegetarian</h2>
+						<h3>Five week course in London</h3>
+					</hgroup>
+					<p>A five week introduction to traditional Japanese vegetarian meals, teaching you a selection of rice and noodle
+						dishes.</p>
+				</article>
+				<article>
+					<figure>
+						<img src="images/teriyaki.jpg" alt="Teriyaki sauce" />
+						<figcaption>Teriyaki Sauce</figcaption>
+					</figure>
+					<hgroup>
+						<h2>Sauces Masterclass</h2>
+						<h3>One day workshop</h3>
+					</hgroup>
+					<p>An intensive one-day course looking at how to create the most delicious sauces for use in a range of Japanese
+						cookery.</p>
+				</article>
+			</section>
+			<aside>
+				<section class="popular-recipes">
+					<h2>Popular Recipes</h2>
+					<a href="">Yakitori (grilled chicken)</a>
+					<a href="">Tsukune (minced chicken patties)</a>
+					<a href="">Okonomiyaki (savory pancakes)</a>
+					<a href="">Mizutaki (chicken stew)</a>
+				</section>
+				<section class="contact-details">
+					<h2>Contact</h2>
+					<p>Yoko's Kitchen<br />
+						27 Redchurch Street<br />
+						Shoreditch<br />
+						London E2 7DP</p>
+				</section>
+			</aside>
+			<footer>
+				&copy; 2011 Yoko's Kitchen
+			</footer>
+		</div>
+	</body>
+</html>

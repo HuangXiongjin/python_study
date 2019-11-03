@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.btn1{
+				/* background-color:hidden; */
+				border: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="adv2" src="img/i1.jpg" />
+		</div>
+		<div>
+			<button class="btn1" onclick="f1()"><img src="img/i11.jpg"/></button>
+			<button onclick="f2()"><img src="img/i22.jpg"/></button>
+			<button onclick="f3()"><img src="img/i33.jpg"/></button>
+		</div>
+		
+	</body>
+	<script>
+		// let button1 = document.getElementsByTagName('button')
+		function f1() {
+			document.querySelector("#adv2").src = "img/i1.jpg"
+		}
+		function f2() {
+			document.querySelector("#adv2").src = "img/i2.jpg"
+		}
+		function f3() {
+			document.querySelector("#adv2").src = "img/i3.jpg"
+		}		
+	</script>
+</html>

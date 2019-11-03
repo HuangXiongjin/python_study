@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/购物车.css"/>
+	</head>
+	<body>
+		<div id="app-1">
+			<table border="0" cellspacing="1" bgcolor="#000000">
+			<!--表头-->
+				<tr class="header">
+					<td class="td1"><input type="checkbox" name="" id="check-all" value="" /><label for="check-all">全选</label></td>
+					<td class="td2">商品</td>
+					<td class="td3">单价</td>
+					<td class="td4">数量</td>
+					<td class="td5">小计</td>
+					<td class="td6">操作</td>
+				</tr>
+				
+				<!--商品内容-->
+				<tr v-for="goods in goodsData" class="content" v-if="goods.count>0">
+					<!--商品第一列-->
+					<td class="ctd1"><input type="checkbox" name="" id="" value="" /></td>
+					<!--商品图片和名字-->
+					<td class="box1">
+						<div class="box2">
+							<img v-bind:class="imageClass" v-bind:src="goods.image"/>
+							
+							<p class="title">{{goods.title}}</p>
+						</div>
+					</td>
+					
+					<!--单价-->
+					<td class="center">
+						{{goods.price}}
+					</td>
+					
+					<!--数量-->
+					<td class="center">
+						<button v-on:click="goods.count -= 1; if(goods.count<1){goods.count=1}">-</button>
+						<input type="" name="" class="count" v-model="goods.count" />
+						<button v-on:click="goods.count += 1">+</button>
+					</td>
+					
+					<!--总计-->
+					<td class="center">
+						{{goods.price*goods.count}}
+					</td>
+					<td class="center">
+						<button v-on:click="goods.count=0">删除</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		
+		
+		<!--请求数据-->
+		<script type="text/javascript">
+			var app = new Vue({
+				el:'#app-1',
+				data:{
+					goodsData:[],
+					imageClass:'image'
+				}
+			})
+			$.ajax({
+				type:"get",
+				url:"http://rap2api.taobao.org/app/mock/177073/getGoodsList",
+				async:true,
+				success:function(result){
+					app.goodsData = result.goodsData
+					console.log(result.goodsData)
+				}
+			});
+		</script>
+	</body>
+</html>

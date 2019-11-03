@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			a{
+				display: block;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="load">加载新闻</button>
+		<div id="container"></div>
+		<!-- 
+			$.getJSON(
+				'..url...' ,
+				function(json) {
+					//dom操作
+				},
+				function(err) {}
+			)
+		 -->
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(() => {
+				let page = 0
+				$('#load').on('click', (evt) => {
+					page += 1
+					$.getJSON(
+						'http://api.tianapi.com/social/?&key=f9fc6d8fc791cef52679647948de44ff&num=10&page=' + page,
+						(json) => {
+							let array = json.newslist
+							for (x of array) {
+								$('#container').prepend(
+									$('<a>').attr('href', x.url).text(x.title)
+								)
+							}
+						}
+					)
+				})
+			})
+		</script>
+	</body>
+</html>

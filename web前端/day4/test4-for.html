@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			let total = 0
+			let n = parseInt(prompt('请输入要累加求和的数：')) 
+			for (let i=0;i<=n;i+=1) {
+				total += i
+			}
+
+			document.write(`1~${n}的和是:${total}`)
+			// document.write(i) 程序报错
+			//let 定义的变量是块级作用域变量,只在定义的{}中范围内起作用
+			//var定义的变量是函数级或全局作用域
+		</script>
+	</body>
+</html>

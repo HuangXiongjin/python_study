@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js">
+			
+		</script>
+		
+		<!--=========样式==========-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box1{
+				/*background-color: lightgoldenrodyellow;*/
+				height: 310px;
+			}
+			
+			#box1>img{
+				/*background-color: yellowgreen;*/
+				height: 100%;
+				width: 450px;
+			}
+			
+			
+		</style>
+		
+	</head>
+	<body>
+		<!--=============HTML代码============-->
+		<div id="box1">
+			<img src=""/>
+		</div>
+		
+		<div id="box2">
+			
+		</div>
+		
+		<!--===============js代码============-->
+		<script type="text/javascript">
+			//1.准备数据
+			var allData = [
+				{smallImg:'thumb-1.jpg', bigImg:'picture-1.jpg'},
+				{smallImg:'thumb-2.jpg', bigImg:'picture-2.jpg'},
+				{smallImg:'thumb-3.jpg', bigImg:'picture-3.jpg'}
+			]
+			
+			//2.创建数据对应的节点
+			allData.forEach(function(item,index,arr){
+				//设置大图
+				if(index == 0){
+					$('#box1 img').attr('src', 'img/'+item.bigImg)
+				}
+				
+				//创建小图
+				imgNode = $('<img />')
+				imgNode.attr('src', 'img/'+item.smallImg)
+				//给js对象绑定属性
+				imgNode[0].bigImg = item.bigImg
+				$('#box2').append(imgNode)
+			})
+			
+			//3.绑定事件
+			$('#box2').on('mouseover','img',function(){
+				console.log('=====:',this.bigImg)
+				$('#box1 img').attr('src', 'img/'+this.bigImg)
+			})
+			
+			
+		</script>
+	</body>
+</html>

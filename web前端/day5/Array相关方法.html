@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<script>
+			//过滤(map)   映射(filter)      归约(reduce)
+			let nums = [1, 12, 18, 23, 18, 4, 5, 6, 7, 12]
+			// let nums1 = nums.filter((x) => x % 2 == 0)
+			// alert(nums1)
+			let result = nums.filter((x) => x % 2 == 0).map((x) => x*x).reduce((x,a) => a += x, 0)
+			alert(result)
+			// nums.sort((x, y) => y - x)
+			// alert(nums)
+			// alert(nums.indexOf(18))
+			// alert(nums.lastIndexOf(18))
+			// alert(nums.indexOf(12))
+			// alert(() => )
+		</script>
+	</body>
+</html>

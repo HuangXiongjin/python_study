@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select name="province" id="province">
+			
+		</select>
+		<select name="city" id="city">
+			
+		</select>
+		
+		
+		<script type="text/javascript">
+			
+			//获取节点
+			provinceNode = document.getElementById('province')
+			cityNode = document.getElementById('city')
+			
+			//城市数据
+			cityMessage = {
+				'四川省': ['成都市', '绵阳市','德阳市','自贡', '巴中', '宜宾', '眉山', '乐山'],
+				'重庆': ['南岸区', '沙坪坝', '璧山', '秀山', '合川', '丰都', '万州', '开州'],
+				'广东省': ['广州市','深圳', '佛山', '汕头', '珠海']
+			}
+			
+			//==========显示省=========
+			for(province in cityMessage){
+				//创建每个省对应的节点
+				provinceOptNode = document.createElement('option')
+				provinceOptNode.innerText = province
+				provinceOptNode
+				provinceNode.appendChild(provinceOptNode)
+			}
+			
+			//======显示市=============
+			function refreshCity(){
+				//清空
+				cityNode.innerHTML = ''
+				//根据省获取市的信息
+				citys = cityMessage[provinceNode.value]
+				//显示市信息
+				for(x=0;x<citys.length;x++){
+					city = citys[x]
+					cityOptNode = document.createElement('option')
+					cityOptNode.innerText = city
+					cityNode.appendChild(cityOptNode)
+				}
+			}
+			refreshCity()
+			
+			
+			//===========刷新市============
+			provinceNode.onchange = refreshCity
+			
+			
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

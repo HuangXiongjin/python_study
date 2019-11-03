@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.ball{
+				width: 80px;
+				height: 80px;
+				margin: 10px;
+				text-align: center;
+				font:bold 50px/80px "courier new";
+				float: left;
+				border-radius: 44px;
+				border-width: 4px;
+				border-style: solid;
+			}
+			.red{
+				color: red;
+				border-color: #FF0000;
+			}
+			.bule{
+				color: blue;
+				border-color: #0000FF;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			
+			function randomLotterNumber() {
+				let redBall = []
+				for (let num =1; num <= 33; num +=1) {
+					redBall.push((num < 10? '0':'') + num)
+				}
+				let selectedBalls = []
+				for (let i = 0; i < 6; i += 1) {
+					let index = parseInt(Math.random() * redBall.length)
+					selectedBalls.push(redBalls[index])
+					redBalls.splice(index, 1)
+				}
+				selectedBalls.sort()
+				let blueBall = parseInt(Math.random() * 16 + 1)
+				bule
+			}
+			function displayLottery(nums) {
+				for (let i = 0; i < nums.length-1; i +=1 ) {
+					drawBall(nums[i])
+				}
+				drawBall(nums[nums.length-1], 'bule')
+			}
+			// var number =  parseInt(Math.random() * 23 + 1)
+			function drawBall(num, color='red') {
+				document.write(`<div class="ball ${color}">`)
+				document.write(num)
+				document.write(`</div>`)
+			}
+			displayLottery(['03', '11', '34', '21', '19', '24', '13'])
+			
+		</script>
+	</body>
+</html>

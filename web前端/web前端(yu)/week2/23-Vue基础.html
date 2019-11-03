@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue基础</title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<!--
+			Vue主要包含两个部分：Vue对象和指令
+			1.Vue对象
+			var 对象名 = new Vue({
+				el:关键对象的选择器,
+				data: 数据对象(属性和值自己决定),
+				methods:方法对象(属性对应的值是方法)
+			})
+			
+			
+		-->
+		
+	</head>
+	<body>
+		<!--1.设置标签内容-->
+		<!--<p id="app-1">
+			{{name}}
+		</p>
+		<script type="text/javascript">
+			var app1 = new Vue({
+				el:'#app-1',
+				data:{
+					message:'我是p标签',
+					name: '认识Vue.js'
+				}
+			})
+		</script>-->
+		
+		<!--<div id="app-2">
+			<p>{{pText}}</p>
+			<a href="">{{aTitle}}</a>
+			<h1>{{title}}</h1>
+		</div>
+		
+		<script type="text/javascript">
+			var app2 = new Vue({
+				el:'#app-2',
+				data:{
+					pText: '我是段落',
+					aTitle: '百度一下',
+					title: '我是标题1'
+				}
+			})
+		</script>-->
+		
+		<!--2.设置标签属性值
+			v-bind:属性='Vue属性名'
+		-->
+		<!--<div id="app-3">
+			<img v-bind:src="imageUrl" v-bind:title="name"/>
+		</div>
+		
+		<script type="text/javascript">
+			var app3 = new Vue({
+				el:'#app-3',
+				data:{
+					imageUrl:'img/a1.jpg',
+					name: '路飞'
+				}
+			})
+			
+		</script>-->
+		
+		<!--3.if语句：
+			v-if='条件语句'  -- 如果条件语句的结果是true,标签就显示，否则不显示
+		-->
+		<div id="app-4">
+			<!--如果message的值是空就隐藏，否则显示-->
+			<p v-if="message">内容是:{{message}}</p>
+			
+			<!--如果message的值是123就显示，否则隐藏-->
+			<p v-if="message=='123'">内容是:{{message}}</p>
+		</div>
+		<script type="text/javascript">
+			var app4 = new Vue({
+				el:'#app-4',
+				data:{
+					message: 'Vue.js'
+				}
+			})
+		</script>
+		
+		
+		<!--4.循环结构:
+			v-for="变量 in 数组属性"
+		-->
+		<!--<div id="app-5">
+			<ul>
+				<li v-for="mesage in names"><img v-bind:src="mesage['img']"/>{{mesage.name}}</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var app5 = new Vue({
+				el:'#app-5',
+				data:{
+					names:[
+						{img:'img/a1.jpg', name:'python'},
+						{img:'img/a2.jpg', name:'前端H5'},
+						{img:'img/a3.jpg', name:'java大数据'},
+						{img:'img/luffy.jpg', name:'物联网'}
+					]
+				}
+			})
+		</script>-->
+		
+		<!--5.事件绑定:
+			v-on:事件名='函数名' 
+		-->
+		<!--<div id="app-6">
+			<p>{{num}}</p>
+			<button v-on:click="addAction">加1</button>
+		</div>
+		<script type="text/javascript">
+			var app6 = new Vue({
+				el:'#app-6',
+				data:{
+					num: 0
+				},
+				methods:{
+					addAction: function(){
+						this.num ++
+					}
+				}
+				
+			})
+		</script>-->
+		
+		
+		<!--6.input标签内容和属性双向绑定:
+			v-model="Vue对象属性名"
+		-->
+		<div id="app-7">
+			<p>{{message}}</p>
+			<input v-model="message" />
+		</div>
+		<script type="text/javascript">
+			var app7 = new Vue({
+				el: '#app-7',
+				data:{
+					message: '你好'
+				}
+			})
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

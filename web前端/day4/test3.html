@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js3</title>
+	</head>
+	<body>
+		<script>
+			let yearStr = prompt('请输入年份：')
+			let year =  parseInt(yearStr)
+			if (year == yearStr && year > 0){
+				let isLeap = year % 4 == 0 && year % 100 !== 0 || year % 400 == 0
+					window.alert(`${year}年${isLeap? '是':'不是'}闰年`)
+			}else{
+				alert('请输入有效年份')
+			}
+			
+			
+			//isNaN()判断是否是一个数字,是的话为真
+			// if (isNaN(year) || year <= 0){
+			// 	window.alert('请输入有效年份！')
+			// }else{
+			// 	let isLeap = year % 4 == 0 && year % 100 !== 0 || year % 400 == 0
+			// 	window.alert(`${year}年${isLeap? '是':'不是'}闰年`)
+			// }
+			
+			
+			// if ((year % 4 == 0 && year % 100 !== 0 ) || (year % 400 == 0)){
+			// 	window.alert(`${year}是闰年`)
+			// }else{
+			// 	window.alert(`${year}不是闰年`)
+			// }
+		</script>
+	</body>
+</html>

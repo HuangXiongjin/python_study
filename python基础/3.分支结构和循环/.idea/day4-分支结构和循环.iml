@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="jdk" jdkName="Python 3.7" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="day5-循环和列表" />
+    <orderEntry type="module" module-name="python test" />
+    <orderEntry type="module" module-name="day6元组和数字" />
+    <orderEntry type="module" module-name="day8-元祖字典和集合" />
+    <orderEntry type="module" module-name="day7-字典和集合" />
+    <orderEntry type="module" module-name="day8-字符串" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
+  </component>
+</module>

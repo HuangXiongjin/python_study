@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BOM操作</title>
+	</head>
+	<body>
+		<div id="" style="background-color: yellowgreen; height: 10000px;">
+			
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	//1.什么是BOM
+	//BOM(browser object model)浏览器对象模型
+	//js自带一个window对象，指向当前浏览器；js中所有的全局变量都是绑定在window对象上的属性
+	//在使用的时候，window可以省略
+	num = 10    // 相当于window.num = 10
+	console.log(window.num, num)
+	
+	function func1(){
+		console.log('我是函数')
+	}
+	window.func1()
+	
+	//2.window基本操作
+	//1) 打开新的窗口
+	//open(url, name属性, 窗口大小 )
+	//a）打开新的窗口: open(url) - 在新的窗口中打开新页面, 
+	//new_window = window.open('https://www.baidu.com')
+	//console.log(new_window)
+	//b) 打开新的窗口, 同时设置窗口的宽度和高度
+	//new_window2 = open('https://www.baidu.com','','width=400,height=300')
+	
+	//2)关闭窗口
+	//窗口对象.close()
+	//window.close() / close()  - 关闭当前窗口
+	//close()
+	
+	//关闭其他窗口
+	//new_window2.close()
+	
+	//3)移动当前窗口
+	//new_window2.moveTo(100, 100)
+	
+	//4)获取窗口的宽度和高度
+	// innerWidth/innerHeight  - 获取浏览器能够显示内容的部分的宽高
+	//console.log(new_window2.innerWidth, new_window2.innerHeight)
+	// outerWidth/outerHeight - 整个浏览器的宽高
+	//console.log(new_window2.outerWidth, new_window2.outerHeight)  
+	
+	//3.弹框
+	//1) 只有确定按钮再加提示信息的弹框
+	alert('提示信息!')
+	
+	//2)一个提示信息，再加确定和取消按钮；根据返回值是true还是false来判断选择是确定还是取消
+	result = confirm('是否删除?')
+	console.log(result)
+	
+	//3)一个提示信息，再加一个输入框和取消确定按钮；根据返回值是否是null来判断点击的是取消还是确定
+	result = prompt('提示信息','输入框中默认值')
+	console.log(result)
+
+</script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+<script type="text/javascript">
+	//1.什么是对象
+	//和python类的对象一样，主要由对象属性和对象方法组成
+	//2.创建对象
+	//1)对象值	
+	obj1 = {
+		name: '余婷',
+		age: 18,
+		gender:'女'
+	}
+	console.log(typeof(obj1), obj1)
+	
+	//2)new 类型()
+	obj2 = new Object()
+	console.log(typeof(obj2), obj2)
+	obj2.name = '小明'
+	console.log(obj2)
+	
+	//3.构造方法 - 一个用来创建对象的函数
+	//1)函数名相当于类名，首字母要大写
+	//2)函数的功能是通过this添加对象属性和对象方法（这儿的this就相当于self）
+	//3)返回值是this
+	function Person(name, age, gender='男'){
+		
+		// 通过new的方式调用, this：Person {} 
+		// 直接调用, this： Window
+		console.log(this)
+		
+		//添加对象属性
+		this.name = name
+		this.age = age
+		this.gender = gender
+		//添加对象方法
+		this.eat = function(food){
+			console.log(this.name+'在吃'+food)
+		}
+		
+		return this
+	}
+	
+	//4.使用构造方法创建对象
+	//对象 = new 构造方法()
+	p1 = new Person('小花', 20, '女')
+	p2 = new Person('小明', 35)
+	
+	//5.通过对象使用对象属性和调用对象方法
+	p1.name = '小花花'
+	console.log(p1.name, p1['name'])
+	
+	p1.eat('面条')
+	p2.eat('面包')
+	
+	//6.添加/修改属性
+	//对象.属性 = 值
+	p1.height = 160
+	console.log(p1, p2)
+	
+	
+	
+	
+	function func1(){
+		console.log('普通函数')
+		console.log(this)
+	}
+	
+//	func1()
+	window.func1()
+	num = 100   //  window.num=100
+	console.log(num, window.num)
+	
+	
+	
+	
+</script>

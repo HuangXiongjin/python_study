@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+		<style type="text/css">
+			#div1{
+				width: 400px;
+				height: 400px;
+				
+				background-color: red;
+			}
+			
+			#div2{
+				width: 200px;
+				height: 200px;
+				
+				background-color: green;
+			}
+			
+			#div3{
+				width: 100px;
+				height: 100px;
+				
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--1.stop修饰符
+			v-on:事件名.stop  - 捕获指定标签上的指定事件(阻止事件传递给父标签)
+		-->
+		<!--<div id="div1" v-on:click.stop="action1">
+			<div id="div2" v-on:click.stop="action2">
+				<div id="div3" v-on:click.stop="action3">
+					
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			var app1 = new Vue({
+				el:'#div1',
+				methods:{
+					action1:function(){
+						alert('div1被点击')
+					},
+					action2:function(){
+						alert('div2被点击')
+					},
+					action3:function(){
+						alert('div3被点击')
+					}
+				}
+			})
+			
+		</script>-->
+		
+		<!--2.表单提交阻止页面重载
+			在form标签中设置: v-on:submit.prevent='方法属性名'
+		-->
+		<!--<form action="" method="get" id="app-2" v-on:submit.prevent="submitAction">
+			<input type="" name="username" id="" value="" />
+			<input type="password" name="password" id="" value="" />
+			<input type="radio" name="sex" id="" value="" />男
+			<input type="radio" name="sex" id="" value="" />女
+			<input type="submit" value="提交"/>
+		</form>
+		<script type="text/javascript">
+			var app2 = new Vue({
+				el:'#app-2',
+				methods:{
+					submitAction:function(){
+						alert('已经提交')
+					}
+				}
+			})
+		</script>-->
+		
+		<div id="app-3">
+			<p v-for="goods in goodslist">{{goods}}</p>
+		</div>
+		<script type="text/javascript">
+			var datalist = {'goodslist':[
+						'元素1','元素2', '元素3', '元素4'
+					]}
+			var app3 = new Vue({
+				el:'#app-3',
+				data:datalist
+			})
+		</script>
+		
+		
+	</body>
+</html>

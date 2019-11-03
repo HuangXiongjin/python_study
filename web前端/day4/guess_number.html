@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//Math.random() 产生0-1之间的随机数
+			 let Answer = parseInt(Math.random()*100)+1
+			 let thyAnwser = 0
+			 let counter = 0
+			do{
+				counter += 1
+				// let thyAnwser = prompt('请输入你猜的数字：')let定义的变量作用域范围只在{}中,所以此处不可以用
+				// thyAnwser = prompt('请输入你猜的数字：')
+				var thyAnwser = prompt('请输入你猜的数字：')//var 定义的变量作用域为全局变量或者函数作用域
+				
+				if (Answer > thyAnwser){
+					alert('猜的数字小了')
+				}else if (Answer < thyAnwser){
+					alert('猜的数字大了')
+				}else{
+					alert('恭喜你猜对了！')
+				}
+			}while (Answer != thyAnwser)
+			
+			if (counter > 7){
+			alert('温馨提示：您的智商余额明显不足！！！')
+			}
+			document.write(Answer)	
+		</script>
+	</body>
+</html>

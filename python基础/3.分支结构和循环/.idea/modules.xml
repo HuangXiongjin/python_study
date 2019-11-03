@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/day4-分支结构和循环.iml" filepath="$PROJECT_DIR$/.idea/day4-分支结构和循环.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../day5-循环和列表/.idea/day5-循环和列表.iml" filepath="$PROJECT_DIR$/../day5-循环和列表/.idea/day5-循环和列表.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../day6元组和数字/.idea/day6元组和数字.iml" filepath="$PROJECT_DIR$/../day6元组和数字/.idea/day6元组和数字.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../day7-字典和集合/.idea/day7-字典和集合.iml" filepath="$PROJECT_DIR$/../day7-字典和集合/.idea/day7-字典和集合.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/day8-元祖字典和集合/.idea/day8-元祖字典和集合.iml" filepath="$USER_HOME$/Desktop/day8-元祖字典和集合/.idea/day8-元祖字典和集合.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../day8-字符串/.idea/day8-字符串.iml" filepath="$PROJECT_DIR$/../day8-字符串/.idea/day8-字符串.iml" />
+      <module fileurl="file://E:/python test/.idea/python test.iml" filepath="E:/python test/.idea/python test.iml" />
+    </modules>
+  </component>
+</project>

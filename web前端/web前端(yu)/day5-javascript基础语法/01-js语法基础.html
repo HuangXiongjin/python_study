@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+
+<script type="text/javascript">
+	//1.注释(和C语言注释一样)
+	//单行注释：在注释文字前加//
+	/*
+	 多行注释1
+	 多行注释2
+	 */
+	
+	//2.标识符
+	//由字母、数字、下划线和$符组成，数字不能开头。（注意:$不轻易使用，在JQ有特殊的意义）
+	num = 23
+	_num = 100
+	
+	//3.关键字
+	//for、if、var、while、func、true、false等....
+
+	//4.数据类型
+	//1）类型
+	//类型名首字母都是大写的
+	// Number(数字)、String(字符串)、Boolean(布尔)、Array(数组)、Object(对象)
+	// a.Number - 包含所有的数字(包括整数和小数),例如: 100, 0.23, -23, 2e5
+	// b.String - 用双引号或者单引号引起来的字符集, 支持转义字符和编码字符
+	// c.Boolean - 只有true和false两个值，分别代表真和假
+	// d.Array - 相当于python中的列表, 用中括号括起来的多个元素。[12, 'abc', true, [1, 2, 3]]
+	// e.Object - 类似python中字典和对象的结合
+	//2)typeof函数
+	//3)类型名(数据)  - 类型转换
+	//parseFloat(数据)  - 将数据转换成浮点数
+	//parseInt(数据)  - 将数据转换成整数
+	result = String(100)
+	console.log('=====:',result, typeof(result))
+	
+	result = parseFloat('12.34')
+	console.log('=====:',result, typeof(result))
+	
+	result = parseInt('12.34')
+	console.log('=====:',result, typeof(result))
+	
+	//typeof(数据) - 获取数据对应的类型
+	console.log(2e5)    //在控制台打印，相当于python的print
+	console.log(typeof(0.12))  
+	console.log(typeof(120)) 
+	str1 = 'hello'
+	str2 = "Hello\t你好\u4e00"
+	console.log(str2)
+	
+	arr1 = [10, 'abc', false, [1, 2, 3]]
+	console.log(arr1, arr1[1])
+	
+	obj1 = {
+		'name':'小明',
+		'age': 18,
+		'sex':'女'
+	}
+	console.log(obj1, typeof(obj1))
+	console.log(obj1['name'], obj1.name)
+	
+	obj2 = {
+		name:'小明',
+		age:18,
+		sex:'男'
+	}
+	console.log(obj2, typeof(obj2))
+	
+	
+	//5.语句
+	//一行一般情况下只写一条语句,语句结束后可以有分号也可以没有；如果一行有多条语句，语句之间必须有分号
+	//缩进无要求
+	//大小写敏感
+	num1 = 100
+num2 = 200
+          num3 = 300
+          
+    num = 1000
+    NUM = 2000
+    console.log(num, NUM)
+	
+
+</script>

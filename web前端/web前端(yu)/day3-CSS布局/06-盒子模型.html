@@ -1,0 +1,55 @@
+<!--盒子模型
+	html中每个可见的标签都是一个盒子模型，由content、padding、border、margin组成
+	1)content - 内容，设置宽和高其实是设置盒子内容的大小；添加子标签是添加在内容上；
+	            设置背景颜色和背景图都会作用于内容部分
+	2)padding - 内容外面的可见部分(默认没有),有四个方向; 设置padding会让标签变大；
+				设置背景颜色和背景图都会作用于padding部分  
+				
+	3)border - 边框，有四个方向，可以单独控制每个方向的大小、颜色、样式
+	4)margin - 内边距，有四个方向；不可见，但是占位置
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				/*2.padding*/
+				/*1)一起设置4个方向的padding值都为50px*/
+				/*padding: 50px;*/
+				
+				/*2)单独设置各个方向的padding*/
+				padding-left: 20px;
+				padding-top: 20px;
+				
+				/*3.border
+				 * 1）一起设置
+				 * 格式 - border: 边框宽度 边框样式 边框颜色
+				 * 边框样式 - solid(实线)\dashed(虚线)\dotted
+				 */
+				border: 2px solid darkblue;
+				
+				/*2)单独设
+				 */
+				/*border-left-width: 10px;*/
+				border-left: 5px dashed red;
+				
+				/*4.margin*/
+				/*1）一起设置*/
+				/*margin: 20px;*/
+				margin-left: 20px;
+				
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1" style="width: 100px; height: 100px; background-color: hotpink;">
+			<p>我是段落</p>
+		</div>
+		
+		<input type="" name="" id="" value="" style="padding-left: 10px;"/>
+	</body>
+</html>

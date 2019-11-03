@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!--==========js文件=============-->
+		<script type="text/javascript" src="js/tool.js"></script>
+		
+		<!--===========样式表=============-->
+		<style type="text/css">
+			
+			/*水果盒子*/
+			#box1{
+				margin-top: 30px;
+				margin-left: 40px;
+			}
+			
+			.fruit{
+				width: 250px;
+				height: 60px;
+				margin-bottom: 2px;
+				
+				line-height: 60px;
+			}
+			
+			.fruit1{
+				background-color: rgb(80,141,141);
+			}
+			
+			.name1{
+				float: left;
+				
+				width: 225px;
+				height: 100%;
+				text-align: center;
+				
+				color: white;
+				font-size: 25px;
+			}
+			
+			.del{
+				float: right;
+				
+				width: 25px;
+				height: 100%;
+				
+				font-size: 25px;
+				color: white;
+				
+				/*设置鼠标悬停时候的样式为手指*/
+				cursor: pointer;
+			}
+			
+			
+			/*输入框和按钮*/
+			#box2{
+				margin-left: 40px;
+			}
+			
+			#box2 input{
+				width: 250px;
+				height: 60px;
+				
+				border: 0;
+				border-bottom: 1px solid rgb(150,150,150);
+				
+				text-align: center;
+				
+				font-size: 25px;
+				
+				vertical-align: bottom;
+			}
+			#box2 input:focus{
+				outline: 0;
+			}
+			
+			#box2 button{
+				vertical-align: bottom;
+				
+				width: 100px;
+				height: 40px;
+				color: white;
+				background-color: rgb(250,105,70);
+				font-size: 15px;
+				
+				border: 0;
+			}
+			#box2 button:focus{
+				outline: 0;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="box1">
+			<div class="fruit1 fruit">
+				<font class="name1">苹果</font><font class="del">×️</font>
+			</div>
+			<div class="fruit1 fruit">
+				<font class="name1">草莓</font><font class="del">×️</font>
+			</div>
+			<div class="fruit1 fruit">
+				<font class="name1">香蕉</font><font class="del">×️</font>
+			</div>
+			<div class="fruit1 fruit">
+				<font class="name1">榴莲</font><font class="del">×️</font>
+			</div>
+		</div>
+		
+		<div id="box2">
+			<input type="" name="" id="furitName" value="" />
+			<button onclick="addAction()">确定</button>
+		</div>
+		
+		<script type="text/javascript">
+			
+//			function func1(){
+//				//全局变量
+//				a = 100
+//				//局部变量
+//			    var b = 200
+//			}
+//			func1()
+
+			
+			//=============添加水果============
+			function addAction(){
+				//1.获取输入框中的内容
+				inputNode = document.getElementById('furitName')
+				furitName = inputNode.value
+				if(furitName.length == 0){
+					alert('请输入水果名!')
+					return 
+				}
+				inputNode.value = ''
+				//2.创建节点
+				var divNode = document.createElement('div')
+				divNode.style.backgroundColor = randomColor(0.5)
+				divNode.className = 'fruit'
+				
+				var nameNode = document.createElement('font')
+				nameNode.className = 'name1'
+				nameNode.innerText = furitName
+				
+				var delNode = document.createElement('font')
+				delNode.className = 'del'
+				delNode.innerText = '×'
+				delNode.onclick = delAction
+				
+				//3.添加节点
+				divNode.appendChild(nameNode)
+				divNode.appendChild(delNode)
+				box1Node = document.getElementById('box1')
+				box1Node.insertBefore(divNode, box1Node.firstElementChild)
+			}
+			
+			//===============删除水果====================
+			function delAction(){
+				console.log(this)
+				this.parentElement.remove()
+			}
+			
+			delNodes = document.getElementsByClassName('del')
+			for(x=0;x<delNodes.length;x++){
+				delNode = delNodes[x]
+				delNode.onclick = delAction
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

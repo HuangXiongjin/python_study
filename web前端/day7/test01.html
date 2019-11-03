@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#container{
+				margin: 50px 100px;
+			}
+			#fruits>li{
+				background-color: #5F9EA0;
+				width: 150px;
+				height: 50px;
+				color: white;
+				text-align: center;
+				margin: 2px 0;
+				font: 20px/50px "courier new";
+			}
+			#fruits>li>a{
+				float: right;
+				text-decoration: none;
+				color: white;
+				position: relative;
+				right: 5px;
+			}
+			#fruits~input{
+				border: none;
+				outline: none;
+				margin:50px 0 100px 0;
+				font-size: 20px/30px "courier new";
+				
+			}
+			#fruits~input[type=text]{
+				width: 150px;
+				height: 30px;
+				border-bottom: 1px solid black;
+				text-align: center;
+			}
+			#fruits~input[type=button]{
+				background-color: red;
+				width: 50px;
+				height: 30px;
+				font: 15px/30px "courier new";
+				color: white;
+				vertical-align: bottom;
+				cursor: pointer;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul id="fruits">
+				<li>西瓜<a href="">x</a></li>
+				<li>苹果<a href="">x</a></li>
+				<li>香蕉<a href="">x</a></li>
+				<li>草莓<a href="">x</a></li>
+			</ul>
+			<input type="text" name="fruit">
+			<input id="ok" type="button" value="确定">
+		</div>
+		<script>
+			let ul = document.querySelector('#fruits')
+			let button = document.querySelector('#ok')
+			//previousElementSibling 属性返回指定元素的前一个兄弟元素（相同节点树层中的前一个元素节点）
+			let input = button.previousElementSibling
+			function addItem(){
+				let fruitName = input.value.trim()
+				if (fruitName.length > 0) {
+					let item = document.createElement('li')
+					item.textContent = fruitName
+					let a = document.createElement('a')
+					a.textContent = 'x'
+					a.href = ''
+					a.addEventListener('click', removeItem)
+					item.appendChild(a)
+					ul.appendChild(item)
+				}
+				input.value = ''
+				input.focus()
+			}
+			
+			function removeItem(evt) {
+				evt = evt || window.event
+				evt.preventDefault()
+				let anchor = evt.target || evt.srcElement
+				ul.removeChild(anchor.parentElement)
+			}
+			
+			//通过循环给所有的a标签绑定点击事件
+			let anchors = document.querySelectorAll('#fruits>li>a')
+			for (a of anchors) {
+				a.addEventListener('click', removeItem)
+			}
+			
+			button.addEventListener('click', addItem)
+
+		
+		</script>
+	</body>
+</html>

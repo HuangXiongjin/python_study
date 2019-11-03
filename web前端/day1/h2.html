@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>表单提交</title>
+        <link rel="icon" href="./img/aaa.ico">
+    </head>
+    <body>
+        <form action="" method="post">
+        <fieldset>
+            <legend>账户信息</legend>
+        账号：<input type="text" placeholder="手机号或邮箱"><br>
+        密码：<input type="password" placeholder="6-12数字或字母"><br>
+        </fieldset>
+        <fieldset>
+            <legend>问卷调查</legend>
+            <p>
+                你是通过什么了解我们的？
+                <select>
+                        <option>百度</option>
+                        <option>谷歌</option>
+                        <option>搜狐</option>
+                        <option>腾讯</option>
+                    </select>
+            </p>
+            <p>
+                你是否还会再来访问？
+                <input type="radio" name="n">Yes
+                <input type="radio" name="n">No
+                <input type="radio" name="n">Maybe
+            </p>
+            <p>
+                给我们的建议：<br>
+                <textarea autofocus="autofocus" name="comment" rows="5" cols="50" placeholder="请输入你的意见" maxlength="50"></textarea>
+            </p>
+            <p>
+                <input type="checkbox" name="yes" checked>
+                给我发电子邮件
+            </p>
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+
+        </fieldset>
+        </form>
+    </body>
+</html>

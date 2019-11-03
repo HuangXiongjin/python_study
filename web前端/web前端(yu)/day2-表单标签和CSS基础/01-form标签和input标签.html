@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--1.表单标签(form)
+			专门用来进行用户信息收集的一个标签，一般要结合表单相关的标签来使用才有意义。
+			表单相关标签：input、select、textarea等。
+			主要提供form中子标签的内容的提交和重置功能
+			
+			1）action属性：提交路径(接口)
+			2）method属性：提交方式(post/get)
+		-->
+		<form action="" method="post">
+		</form>
+		
+		<!--2.input标签
+			input标签是表单相关标签，可以在form标签中使用，也可以单独使用
+			
+			1）type
+			input标签会因为type的不同，功能完全不一样
+			
+			2)name - 区分；提交（相当于的字典的key）
+			要不要给这个属性赋值，主要看：1）需不要区分不同的内容 2)需不需要提交这个input标签的值
+			
+			3)value 
+			value的意义会根据type值的不同而不一样；但是表单提交的时候提交的都是value的值
+		-->
+			
+		<form action="" method="get">
+			<!--1)文本输入框 - text
+				a. value属性 - 给这个属性赋值是在设置输入框的默认值; 修改输入框中的内容，会改变这个属性的值
+				b. placeholder - 输入框为空的时候的默认显示信息
+				c. maxlength - 输入框最多能输入的内容的长度
+			-->
+			<font>账号:</font>
+			<input type="text" name="tel"  value="" placeholder="请输入手机号码" maxlength="6"/><br />
+			
+			<!--2)密码输入框 - password
+				a. value属性 - 给这个属性赋值是在设置输入框的默认值; 修改输入框中的内容，会改变这个属性的值
+				b. placeholder - 输入框为空的时候的默认显示信息
+				c. maxlength - 输入框最多能输入的内容的长度
+			-->
+			<font>密码:</font>
+			<input type="password" name="pw" id="" value="123456" maxlength="10"/><br />
+			
+			<!--3)单选按钮 - radio 
+				a. name属性 - 如果多个选项是一组数据必须保证它们的name属性值一样才能做到多个选项单选
+				b. value属性 - 不能显示，只能用来提交的
+				c. checked属性 - 给这个属性赋值为checked让按钮处于默认选中状态
+				
+				补充: 可以通过将label的for属性和input的id属性保持一致，让label和input进行关联
+			-->
+			<font>性别:</font>
+			<input type="radio" name="sex" id="sex1" value="男" checked="checked" /><label for="sex1">男</label>
+			<input type="radio" name="sex" id="sex2" value="女" /><label for="sex2">女</label>
+			<br />
+			
+			<!--4)复选按钮 - checkbox
+				a. name属性 - 如果多个选项是一组数据必须保证它们的name属性值一样
+				b. value属性 - 不能显示，只能用来提交的
+				c. checked属性 - 给这个属性赋值为checked让按钮处于默认选中状态
+			-->
+			<input type="checkbox" name="interest" id="in1" value="餐饮" /><label for="in1">餐饮</label>
+			<input type="checkbox" name="interest" id="in2" value="游戏" /><label for="in2">游戏</label>
+			<input type="checkbox" name="interest" id="in3" value="旅游" /><label for="in3">旅游</label>
+			<br /><br />
+			
+			
+			<!--5)普通按钮 - button
+				value属性 - 按钮上显示的内容
+				
+				补充：button标签
+			-->
+			<input type="button"  id="" value="登录" />
+			<button>登录</button>
+			<button><img src="img/aaa.ico"/></button>
+			<br /><br />
+			
+			<!--6)重置按钮 - reset
+				重置当前重置按钮所在的form标签中的所有的相关标签的值
+			-->
+			<input type="reset" name="" id="" value="重置" />
+			
+			<!--7)提交按钮 - submit
+				以‘name=value’的方式提交当前form标签的内容
+			-->
+			<input type="submit" value="提交"/>
+			
+			<!--8.其他类型-->
+			<input type="color" name="color" id="" value="" />
+			<input type="date" name="date" id="" value="" />
+			<input type="datetime-local" name="date-time" id="date-time" value="" />
+			<input type="file" name="file" id="" value="" />
+		</form>
+		
+		
+		
+		
+	</body>
+</html>

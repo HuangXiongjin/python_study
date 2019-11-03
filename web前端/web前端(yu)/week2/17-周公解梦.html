@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		
+		
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box1{
+				height: 250px;
+				/*background-color: lightblue;*/
+				
+				border-bottom: 1px solid rgb(150,150,150);
+				
+				position: relative;
+			}
+			
+			/*盒子*/
+			#box1 div{
+				position: absolute;
+				bottom: 5px;
+				
+				width: 100%;
+				text-align: center;
+			}
+			
+			/*输入框*/
+			#box1 input{
+				border: 0;
+				border-bottom: 1px dotted rgb(200,200,200);
+				
+				width: 300px;
+				height: 60px;
+				
+				font-size: 25px;
+				text-align: center;
+				
+				vertical-align: bottom;
+			}
+			#box1 input:focus{
+				outline: 0;
+			}
+			
+			/*按钮*/
+			#box1 button{
+				width: 100px;
+				height: 40px;
+				
+				background-color: orangered;
+				color: white;
+				
+				font-size: 20px;
+				
+				vertical-align: bottom;
+			}
+			
+			
+			#box2 p{
+				/*background-color: yellow;*/
+				width: 400px;
+				
+				margin-left: auto;
+				margin-right: auto;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="">
+				<input type="" name="" id="" value="" />
+				<button>查询</button>
+			</div>
+		</div>
+		<div id="box2">
+			<p></p>
+		</div>
+		
+		
+		<script type="text/javascript">
+			//===查询事件
+			$('#box1 button').on('click', function(evt){
+				//1.获取输入框中的内容
+				const value = $('#box1 input').val()
+				//2.网络请求
+				$.ajax({
+					type:"get",
+					url:"http://api.tianapi.com/txapi/dream/",
+					data:{
+						key:'772a81a51ae5c780251b1f98ea431b84',
+						word:value
+					},
+					async:true,
+					success:function(result){
+						let message = result['newslist'][0]['result']
+						//console.log('===:',message)
+						$('#box2 p').html(message)
+					}
+				});
+				
+			})
+		</script>
+	</body>
+</html>
