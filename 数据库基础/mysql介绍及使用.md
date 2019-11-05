@@ -1,15 +1,3 @@
-视频网址：
-
-```
-https://pan.baidu.com/s/1oI4m3956Zwn6ha3gYVQOcA  密码:1mzf
-```
-
-资料连接：
-
-```
-https://github.com/jackfrued/Python-100-Days/blob/master/Day36-40/36-38.%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93MySQL.md
-```
-
 1. 数据库(Database)的基本理解理念
 
    - 数据的集散地(仓库)

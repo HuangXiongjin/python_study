@@ -1,36 +1,36 @@
+### 安装Git
 
+1. 下载
 
-1. 安装Git
+> [root@izbp15547sumlsn3rij2lmz ~]# wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.23.0.tar.gz
 
-   1. 下载
+2. 解压 / 归档
 
-      wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.23.0.tar.gz
+    ```
+    [root@izbp15547sumlsn3rij2lmz ~]# gunzip git-2.23.0.tar.gz
+    [root@izbp15547sumlsn3rij2lmz ~]# tar -xvg git-2.23.0.tar
+    [root@izbp15547sumlsn3rij2lmz ~]# cd git-2.23.0
+    [root@izbp15547sumlsn3rij2lmz git-2.23.0]# 
+    git-2.23.0
+    ```
 
-   2. 解压 / 归档
+3. 补充相关依赖项
 
-      gunzip git-2.23.0.tar.gz
-      tar -xvg git-2.23.0.tar
-      cd git-2.23.0
+   yum install -y libcurl-devel
 
-   3. 补充相关依赖项
+4. 安装前的配置
 
-      yum install -y libcurl-devel
+   ./configure --prefix=/usr/local
 
-   4. 安装前的配置
+5. 构建和安装
 
-      ./configure --prefix=/usr/local
+   make && make install
 
-   5. 构建和安装
+6. 查看是否安装成功
 
-      make && make install
+   git --vetsison
 
-   6. 查看是否安装成功
-
-      git --vetsison
-
-   
-
-2. 版本控制（软件控制管理）
+7. 版本控制（软件控制管理）
 
    1900 --- CVS / VSS ——锁定模式
 
@@ -38,7 +38,7 @@
 
    2005 --- Git ——合并模式 ：分布式版本控制系统
 
-3. Git 操作说明
+### Git 操作说明
 
 - 初始化版本仓库
 
@@ -111,7 +111,7 @@
 
 - 配置免密访问（生成密钥对）
 
-  - (1)ssh-keygen -t rsa -b 2048 -C 1975436224@qq.com
+  - (1)ssh-keygen -t rsa -b 2048 -C <邮箱名称>
   - (2)cat /root/.ssh/id_rsa.pub
   - (3)在远端服务器的仓库中部署SSH公钥就可以实现免密访问了
 
@@ -131,7 +131,7 @@
      4. 确认密码
   5. 进入到id_rsa.pub文件中将内容复制到仓库的SSH公钥下面的公钥栏保存即可（可能第一次Push还是认证后续不用）
 
-```
+```python
 1. git clone xxxxxx.git (master不能操作)
 2. 建立自己的分支：git checkout -b 分支名
 3. 操作完以后合并分支（不能合并到master,一般是dev分支）：git merge dev
