@@ -10,7 +10,7 @@
 > 2. view：表现层，负责数据的显示和呈现，渲染html页面给用户，或者返回数据给用户
 > 3. controller：业务逻辑层，负责从用户端收集用户的输入，进行业务逻辑处理，包括向模型中发送数据，进行CRUD操作
 
-![images](https://github.com/HuangXiongjin/python_study/blob/master/django/MVC.jpg)
+![images](https://github.com/HuangXiongjin/python_study/blob/master/django%E6%96%87%E6%A1%A3/images/MVC.jpg)
 
 ### MTV模式
 
