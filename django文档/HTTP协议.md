@@ -52,7 +52,7 @@
 
 ### 传输过程
 
-![http传输过程](E:\python_study(github)\django基础\picture\http传输过程.png)
+![images](https://github.com/HuangXiongjin/python_study/blob/master/django%E6%96%87%E6%A1%A3/images/http%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.png)
 ###HTTP协议中的请求方式有哪些
 -　GET：用于请求访问已经被URI（统一资源标识符）识别的资源，可以通过URL传参给服务器
 -　POST：用于传输信息给服务器，主要功能与GET方法类似，但一般推荐使用POST方式。
