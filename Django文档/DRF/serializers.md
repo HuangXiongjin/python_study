@@ -10,7 +10,7 @@
 
 ### serialziers中的字段
 
-![](E:\django笔记\photo\serializers.png)
+![images](https://github.com/HuangXiongjin/python_study/blob/master/Django%E6%96%87%E6%A1%A3/DRF/images/serializers.png)
 
 #### 1.常用的字段
 
