@@ -85,13 +85,11 @@ def main():
                 print(e)
             else:
                 # 首先按照根据输入信息的名字，从列表中删除该生信息，然后重新添加该学生最新信息
-                student_info.remove(del_student_info(student_info,del_name = student.get("name")))
+                student_info.remove(del_student_info(student_info, del_name=student.get("name")))
                 student_info.append(student)
         else:
             break
         input("回车显示菜单")
 
+
 main()
-
-
-
