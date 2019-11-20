@@ -20,7 +20,7 @@
 
 5. 浏览器接收响应的html文件，解析、整理相关的资源文件，最后渲染页面显示给用户
 
-   ![images](https://github.com/HuangXiongjin/python_study/blob/master/django/TCP三次握手.png)
+   ![images](https://github.com/HuangXiongjin/python_study/blob/master/django%E6%96%87%E6%A1%A3/images/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png)
 
 ### 什么是HTTP(Hyper Text Transport Protocol)协议
 
@@ -53,7 +53,11 @@
 ### 传输过程
 
 ![images](https://github.com/HuangXiongjin/python_study/blob/master/django%E6%96%87%E6%A1%A3/images/http%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.png)
+<<<<<<< HEAD:Django文档/网络协议/HTTP协议.md
 ###HTTP协议中的请求方式有哪些
+=======
+### HTTP协议中的请求方式有哪些
+>>>>>>> 6ece3e588c5badf129375f05e3f52639a4909443:django文档/HTTP协议.md
 - GET：用于请求访问已经被URI（统一资源标识符）识别的资源，可以通过URL传参给服务器
 - POST：用于传输信息给服务器，主要功能与GET方法类似，但一般推荐使用POST方式。
 - PUT： 传输文件，报文主体中包含文件内容，保存到对应URI位置。
