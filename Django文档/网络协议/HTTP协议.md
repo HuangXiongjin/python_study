@@ -20,7 +20,7 @@
 
 5. 浏览器接收响应的html文件，解析、整理相关的资源文件，最后渲染页面显示给用户
 
-   ![images](https://github.com/HuangXiongjin/python_study/blob/master/django/TCP三次握手.png)
+   ![images](https://github.com/HuangXiongjin/python_study/blob/master/Django%E6%96%87%E6%A1%A3/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/images/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png)
 
 ### 什么是HTTP(Hyper Text Transport Protocol)协议
 
