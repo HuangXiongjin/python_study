@@ -23,21 +23,36 @@
 
 - 官方下载Python源代码（https://www.python.org）
   wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+  
 - 解压
   - 后缀名为tgz: gunzip <文件名>
   - 后缀名为xz: xz -d <文件名>
+  
 - 解归档
+  
   - 后缀为tar: tar -xvf <归档文件名>
+  
 - 补充相关依赖项
+  
   - yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel libdb4-devel libpcap-devel xz-devel libffi-devel
+  
 - 安装前的配置
-  - ./configure --prefix=/usr/local/python37 --enable-optimizations
+  
+  ```
+  [root@izbp15547sumlsn3rij2lmz ~]# cd Python-3.7.4
+  [root@izbp15547sumlsn3rij2lmz Python-3.7.4]# ./configure --prefix=/usr/local/python37 --enable-optimizations
+  ```
+  
 - 构建和安装
+  
   - make && make install
+  
 - 配置PATH环境变量
   - vim .bash_profile
   - export PATH=$PATH:/usr/local/python37/bin
+  
 - 重新登录或者使用下面命令激活环境变量
+  
   - source .bash_profile
 
 4. 评价Python代码的工具

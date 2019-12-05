@@ -19,6 +19,6 @@ nums.extend('hello')
 print(nums)
 nums.extend(range(100, 105))
 print(nums)
-nums = [23, 89, 60, 89, 60, 1,  60, 23, 1]
-nums.sort(key= lambda num: num % 10)
+nums = [23, 89, 60, 89, 60, 1, 60, 23, 1]
+nums.sort(key=lambda num: num % 10)
 print(nums)
