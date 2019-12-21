@@ -3,7 +3,6 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
 ```
 
 
-
 1. 先完成pycharm配置环境的操作(见Linux文件夹中的pycharm环境配置)
 
 2. 准备mysql环境
@@ -25,14 +24,13 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
 4. 增加操作
 
    ```
-   """---author==hxj---"""
    import pymysql
 
    no = input("部门编号：")
    name = input("部门名称：")
    location = input("部门所在地：")
-   conn = pymysql.connect(host='118.31.103.87', port=3306,
-                          user='root', password='123456',
+   conn = pymysql.connect(host='1.2.3.4', port=3306,
+                          user='root', password='****',
                           database='hrs', charset='utf8'
                           )
    try:
@@ -57,8 +55,8 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
    import pymysql
    import requests
 
-   conn = pymysql.connect(host='120.77.222.217', port=3306,
-                          user='root', password='123456',
+   conn = pymysql.connect(host='1.2.3.4', port=3306,
+                          user='root', password='******',
                           database='hrs', charset='utf8')
    try:
        for page in range(1, 11):
@@ -78,7 +76,6 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
        conn.close()
    ```
 
-   ​
 
    5. 删除操作
 
@@ -86,8 +83,8 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
     import pymysql
 
     no = input("要删除的部门编号：")
-    conn = pymysql.connect(host='118.31.103.87', port=3306,
-                           user='root', password='123456',
+    conn = pymysql.connect(host='1.2.3.4', port=3306,
+                           user='root', password='*****',
                            database='hrs', charset='utf8'
                            )
     try:
@@ -112,8 +109,8 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
     no = input("部门编号：")
     name = input("部门名称：")
     location = input("部门所在地：")
-    conn = pymysql.connect(host='118.31.103.87', port=3306,
-                           user='root', password='123456',
+    conn = pymysql.connect(host='1.2.3.4', port=3306,
+                           user='root', password='******',
                            database='hrs', charset='utf8'
                            )
     try:
@@ -137,8 +134,8 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
    ```
    import pymysql
 
-   conn = pymysql.connect(host='118.31.103.87', port=3306,
-                          user='root', password='123456',
+   conn = pymysql.connect(host='1.2.3.4', port=3306,
+                          user='root', password='******',
                           database='hrs', charset='utf8'
                           )
    try:
@@ -147,7 +144,7 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
                'select dno, dname, dloc from tb_dept'
            )
            # print(cursor.fetchmany(3)) 打印3条记录
-           print(cursor.fetchone()) 返回值是一个迭代器，一次打印一条记录
+           print(cursor.fetchone()) # 返回值是一个迭代器，一次打印一条记录
            print(cursor.fetchone())
            for row in cursor.fetchall():
                print(f'{row[0]}\t{row[1]}\t{row[2]}')
@@ -167,7 +164,7 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
         import pymysql
 
           # 查询到的是一个字典,用字典来显示
-        conn = pymysql.connect(host='118.31.103.87', port=3306,
+        conn = pymysql.connect(host='1.2.3.4', port=3306,
                                user='root', password='123456',
                                database='hrs', charset='utf8',
                                cursorclass=pymysql.cursors.DictCursor
@@ -203,8 +200,8 @@ pymasql获取的数据库连接对象并不是线程安全的（在多线程环�
           def __str__(self):
               return f'{self.no}\t{self.name}\t{self.location}'
     
-      conn = pymysql.connect(host='118.31.103.87', port=3306,
-                             user='root', password='123456',
+      conn = pymysql.connect(host='1.2.3.4', port=3306,
+                             user='root', password='******',
                              database='hrs', charset='utf8',
                              cursorclass=pymysql.cursors.DictCursor)
       try:

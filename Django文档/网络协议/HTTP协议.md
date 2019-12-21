@@ -54,9 +54,6 @@
 ![images](https://github.com/HuangXiongjin/python_study/blob/master/Django%E6%96%87%E6%A1%A3/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/images/http%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B.png)
 
 ###HTTP协议中的请求方式有哪些
-=======
-### HTTP协议中的请求方式有哪些
->>>>>>> 6ece3e588c5badf129375f05e3f52639a4909443:django文档/HTTP协议.md
 - GET：用于请求访问已经被URI（统一资源标识符）识别的资源，可以通过URL传参给服务器
 - POST：用于传输信息给服务器，主要功能与GET方法类似，但一般推荐使用POST方式。
 - PUT： 传输文件，报文主体中包含文件内容，保存到对应URI位置。

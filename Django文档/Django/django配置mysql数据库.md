@@ -50,6 +50,6 @@ pymysql.install_as_MySQLdb()
   - 反向工程：先有数据库的表，再通过检查数据库自动反向生成模型（项目规模大，有专业的DBA）
 
     ```
-    python manage.py inspectdb <应用名称>/models.py
+    python manage.py inspectdb > <应用名称>/models.py
     ```
 

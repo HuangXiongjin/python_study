@@ -271,11 +271,12 @@ filter(属性).exists()：判断是否存在查询的属性值，存在True,不�
  # print(stus)
  # print('=========Q========')
  
- Q() 作用和and一样
+ Q()作用和and一样
  # stus = Student.objects.filter(Q(s_gender=1), Q(s_age__gt=20))
+ # stus = Student.objects.filter(Q(s_gender=1) & Q(s_age__gt=20))
  # print(stus)
  # print('========或==========')
- # # 或必须讲条件用Q括起来
+ # 或必须将条件用Q括起来
  # stus = Student.objects.filter(Q(s_gender=1) | Q(s_age__gt=20))
  # print(stus)
  
@@ -287,7 +288,7 @@ filter(属性).exists()：判断是否存在查询的属性值，存在True,不�
  # print(stus)
 
  模糊查询
- # contains(包含),类似于like %羽%
+ # contains(包含),类似于like %羽% / icontains-忽略大小写
  # stus = Student.objects.filter(s_name__contains='羽')
  # print(stus)
 
@@ -299,10 +300,13 @@ filter(属性).exists()：判断是否存在查询的属性值，存在True,不�
  # stus = Student.objects.filter(s_name__endswith='王')
  # print(stus)
 
- # 对比两字段的值
+ # F对比两字段的值 / 更新数据
  # sql: select * from student where s_gaosu > s_xiandai
  stus = Student.objects.filter(s_gaoshu__gt=F('s_xiandai'))
  print(stus)
+ 
+ stus = Student.objects.filter(s_no=1001)
+ stus.update(s_age=F('s_age')+10)
 
  stus = Student.objects.filter(s_gaoshu__gt=F('s_xiandai') - 10)
  print(stus)

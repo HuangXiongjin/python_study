@@ -14,10 +14,10 @@ def Send_code(request):
         code = ''.join(random.choices('0123456789', k=6))
         resp = requests.post(
             url='http://sms-api.luosimao.com/v1/send.json',
-            auth=('api', 'key-c6305c397d86ab1093b46ad228e5a3fb'),
+            auth=('api', 'key-**********'),
             data={
                 'mobile': tel,
-                'message': f'您的短信验证码是{code}，打死也不能告诉别人哟！【Python小课】'
+                'message': f'您收到的短信验证码是{code}，请注意查收！【铁壳测试】'
             },
             timeout=10,
             verify=False

@@ -19,7 +19,7 @@ vue打包命令：
       ​	dist文件夹可直接从前端项目中复制到code文件夹下面
       ```
       [root@izbp15547sumlsn3rij2lmz code]# ls
-      axf  dist
+      lsj  dist
       [root@izbp15547sumlsn3rij2lmz code]# 
       ```
 
@@ -27,7 +27,7 @@ vue打包命令：
    
       ```
       [root@izbp15547sumlsn3rij2lmz conf]# ls
-      axfnginx.conf  axfnginx.conf1  axfuwsgi.ini
+      lsjnginx.conf  lsjnginx.conf1  lsjuwsgi.ini
       [root@izbp15547sumlsn3rij2lmz conf]
       ```
    
@@ -36,39 +36,47 @@ vue打包命令：
       ```
       [root@izbp15547sumlsn3rij2lmz ~]# cd /home
       [root@izbp15547sumlsn3rij2lmz home]# cd env
-      [root@izbp15547sumlsn3rij2lmz env]# python3 -m venv axfenv
+      [root@izbp15547sumlsn3rij2lmz env]# python3 -m venv lsjenv
       [root@izbp15547sumlsn3rij2lmz env]# ls
-      axfenv
-      [root@izbp15547sumlsn3rij2lmz env]# cd axfenv
-      [root@izbp15547sumlsn3rij2lmz axfenv]# ls
+      lsjenv
+      [root@izbp15547sumlsn3rij2lmz env]# cd lsjenv
+      [root@izbp15547sumlsn3rij2lmz lsjenv]# ls
       bin  include  lib  lib64  pyvenv.cfg
-      [root@izbp15547sumlsn3rij2lmz axfenv]# cd bin
+      [root@izbp15547sumlsn3rij2lmz lsjenv]# cd bin
       [root@izbp15547sumlsn3rij2lmz bin]# ls
       activate      activate.fish  django-admin.py  easy_install-3.7  pip3    __pycache__  python3
       activate.csh  django-admin   easy_install     pip               pip3.7  python       uwsgi
       [root@izbp15547sumlsn3rij2lmz bin]# source activate
-      (axfenv) [root@izbp15547sumlsn3rij2lmz bin]#
+      (lsjenv) [root@izbp15547sumlsn3rij2lmz bin]#
       
-   # 虚拟环境成功以后，安装项目所需要的包，如果进入了虚拟环境中了可执行以下命令安装
-      (axfenv) [root@izbp15547sumlsn3rij2lmz bin]# pip3 install -r requirement.txt
-   # 如果不在虚拟环境下可执行以下命令安装
-      [root@izbp15547sumlsn3rij2lmz ~]# /home/env/axfenv/bin/pip3 install -r requirement.txt
       ```
-      
-      logs：存放nginx启动成功和失败的文件；以及uwsgi运行的日志文件
-      
-```
-      [root@izbp15547sumlsn3rij2lmz logs]# ls
-      uwsgi.log
-      [root@izbp15547sumlsn3rij2lmz logs]# 
-      ```
-      
-   2. 编写自己的项目文件(axf项目为例)
    
-      1. 首先配置好自己的的axfnginx.conf文件
+   **虚拟环境成功以后，安装项目所需要的包，如果进入了虚拟环境中了可执行以下命令安装**
+   
+   ```
+   (lsjenv) [root@izbp15547sumlsn3rij2lmz bin]# pip3 install -r requirement.txt
+   ```
+   
+   **如果不在虚拟环境下可执行以下命令安装**
+   
+   ```
+   [root@izbp15547sumlsn3rij2lmz ~]# /home/env/lsjenv/bin/pip3 install -r requirement.txt
+   ```
+   
+   
+      ```
+   logs：存放nginx启动成功和失败的文件；以及uwsgi运行的日志文件
+   [root@izbp15547sumlsn3rij2lmz logs]# ls
+   uwsgi.log
+   [root@izbp15547sumlsn3rij2lmz logs]# 
+      ```
+
+   2. 编写自己的项目文件(lsj项目为例)
+   
+      1. 首先配置好自己的的lsjnginx.conf文件
       
       ```
-      [root@izbp15547sumlsn3rij2lmz ~]# vim /home/conf/axfnginx.conf
+      [root@izbp15547sumlsn3rij2lmz ~]# vim /home/conf/lsjnginx.conf
         第一种配置方案
         1 upstream backend {
         2     server 118.31.103.87:8000;
@@ -78,7 +86,7 @@ vue打包命令：
         6 
         7 server{
         8     listen 80;
-        9     server_name 118.31.103.87;
+        9     server_name 服务器IP地址;
        10     root /home/code/dist;
        11     index index.html;
        12 
@@ -91,7 +99,7 @@ vue打包命令：
         正式环境中部署为nginx+uwsgi来部署django项目（推荐使用）
         1 server {
         2     listen 80;
-        3     server_name 118.31.103.87;
+        3     server_name 服务器IP地址;
         4     root /home/code/dist;
         5     index index.html;
         6 
@@ -135,34 +143,34 @@ vue打包命令：
          
          ```
       
-      4. 配置axfuwsgi.ini
+      4. 配置lsjuwsgi.ini
       
          1. 安装uwsgi
       
             ```
-            [root@izbp15547sumlsn3rij2lmz ~]# /home/env/axfenv/bin/pip3 install uwsgi
+            [root@izbp15547sumlsn3rij2lmz ~]# /home/env/lsjenv/bin/pip3 install uwsgi
             ```
       
-         2. 配置axfuwsgi.ini文件
+         2. 配置lsjuwsgi.ini文件
       
             ```
             [uwsgi]
-            projectname=axf
+            projectname=lsj
             base=/home/code
             # 守护进程
             master=true
             
             # 虚拟环境
-            pythonhome = /home/env/axfenv
+            pythonhome = /home/env/lsjenv
             
             # 项目地址 chdir = %(base)/%(projectname)
-            chdir=/home/code/axf
+            chdir=/home/code/lsj
             
             # 指定python版本
-            pythonpath=/home/env/axfenv/bin/python3
+            pythonpath=/home/env/lsjenv/bin/python3
             
             # 指定uwsgi文件module = %(projectname).wsgi
-            module=axf.wsgi
+            module=lsj.wsgi
             
             # 和nginx通信地址:端口
             socket=127.0.0.1:8080
@@ -174,7 +182,7 @@ vue打包命令：
          3. 运行项目
       
             ```
-            [root@izbp15547sumlsn3rij2lmz ~]# /home/env/axfenv/bin/python3 uwsgi --ini axfuwsgi.ini
+            [root@izbp15547sumlsn3rij2lmz ~]# /home/env/lsjenv/bin/python3 uwsgi --ini lsjuwsgi.ini
             ```
       
             

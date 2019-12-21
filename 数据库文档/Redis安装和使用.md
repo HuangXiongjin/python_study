@@ -1,4 +1,4 @@
-1. Redis (Remote Dictionary Server)的工作模式(优点) ?
+1. Redis (Remote Dictionary Server)的工作模式(优点) 
    键值对形式存储数据的数据库，放在内存中，单线程+异步I/O(多路I/O复用)的工作模式
 2. 应用场景
 - 高速缓存服务（用户经常访问的数据从数据库搬到内存中）
