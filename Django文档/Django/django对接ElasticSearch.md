@@ -1,3 +1,7 @@
+---
+typora-root-url: images
+---
+
 ### 实现字段搜索的两种方式
 
 1. Mysql的模糊查询 %like%
@@ -12,6 +16,9 @@ ElasticSearch是基于Lucene的搜索服务器，提供了一个分布式多用�
 
 ### ElasticSearch 原理
 ElasticSearch 的实现原理主要分为以下几个步骤，首先用户将数据提交到Elastic Search 数据库中，再通过分词控制器去将对应的语句分词，将其权重和分词结果一并存入数据，当用户搜索数据时候，再根据权重将结果排名，打分，再将返回结果呈现给用户。
+
+![images](https://github.com/HuangXiongjin/python_study/blob/master/Django%E6%96%87%E6%A1%A3/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/images/elasticsearch.png)
+
 
 ### ELK
 ElasticSearch是与名为Logstash的数据收集和日志解析引擎以及名为Kibana的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）
